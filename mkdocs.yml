@@ -1,0 +1,62 @@
+site_name: CMV
+site_url: http://cmv.io/
+dev_addr: '0.0.0.0:8000'
+use_absolute_urls: true
+
+repo_url: https://github.com/cmv/cmv-app
+description: CMV - The Configurable Map Viewer. Make it your own!
+
+docs_dir: ./
+
+theme: yeti
+#theme: spacelab
+#theme: readthedocs
+
+pages:
+#Introduction
+- [installation.md, 'Getting Started', 'Installation']
+- [configure/index.md, 'Getting Started', 'Configure']
+- [support.md, 'Getting Started', 'Support']
+- [develop.md, 'Getting Started', 'Development Environment']
+
+# Config:
+- [configure/index.md, 'Configure', 'Introduction']
+- [configure/viewer.md, 'Configure', 'viewer.js']
+- [configure/basemaps.md, 'Configure', 'basemaps.js']
+- [configure/identify.md, 'Configure', 'identify.js']
+
+
+# Widgets:
+- [widgets/index.md, 'Widgets', 'Introduction']
+- [widgets/Basemaps.md, 'Widgets', 'BaseMaps']
+- [widgets/Bookmarks.md, 'Widgets', 'Bookmarks']
+- [widgets/Directions.md, 'Widgets', 'Directions']
+- [widgets/Draw.md, 'Widgets', 'Draw']
+- [widgets/Editor.md, 'Widgets', 'Editor']
+- [widgets/Find.md, 'Widgets', 'Find']
+- [widgets/Geocoder.md, 'Widgets', 'Geocoder']
+- [widgets/Growler.md, 'Widgets', 'Growler']
+- [widgets/Help.md, 'Widgets', 'Help']
+- [widgets/HomeButton.md, 'Widgets', 'Home Button']
+- [widgets/Identify.md, 'Widgets', 'Identify']
+- [widgets/LayerControl.md, 'Widgets', 'Layer Control']
+- [widgets/Legend.md, 'Widgets', 'Legend']
+- [widgets/LocateButton.md, 'Widgets', 'Locate Button']
+- [widgets/MapInfo.md, 'Widgets', 'Map Info']
+- [widgets/Measurement.md, 'Widgets', 'Measurement']
+- [widgets/OverviewMap.md, 'Widgets', 'Overview Map']
+- [widgets/Print.md, 'Widgets', 'Print']
+- [widgets/Scalebar.md, 'Widgets', 'Scalebar']
+- [widgets/StreetView.md, 'Widgets', 'StreetView']
+
+
+# Contribute:
+- [contribute/index.md, 'Contribute', 'Introduction']
+- [contribute/ContributingOnGitHub.md, 'Contribute', 'Submitting a Pull Request']
+- [contribute/Committers.md, 'Contribute', 'Committing Changes to CMV']
+
+# About
+- [about/license.md, 'About', 'License']
+- [about/changelog.md, 'About', 'Change Log']
+- [about/team.md, 'About', 'The CMV Team']
+
