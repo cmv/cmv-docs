@@ -1,3 +1,5 @@
+# Building Custom Widgets
+
 ##Overview 
 This application has been designed with the the goal of allowing users (a.ka. App Admins) to configure widgets without having to write code. Programmers can add new configurable widgets, by following the rules required to fit in to the viewer framework. Knowledge of [ESRI's JavaScript API] (https://developers.arcgis.com/javascript/) and [dojo] (https://developers.arcgis.com/javascript/jshelp/inside_dojo.html) are required.
  

@@ -1,4 +1,39 @@
 # Find
+The search can be conducted on:
+* a single field of a single layer
+* many fields of a layer
+* or on many fields of many layers
+
+#### Example Config Object
+``` javascript
+editor: {
+  include: true,
+  id: 'editor',
+  type: 'titlePane',
+  path: 'gis/dijit/Editor',
+  title: 'Editor',
+  open: false,
+  position: 8,
+  options: {
+    map: true,
+    mapClickMode: true,
+    editorLayerInfos: true,
+    settings: {
+      toolbarVisible: true,
+      showAttributesOnClick: true,
+      enableUndoRedo: true,
+      createOptions: {
+        polygonDrawTools: ['freehandpolygon', 'autocomplete']
+      },
+      toolbarOptions: {
+        reshapeVisible: true,
+        cutVisible: true,
+        mergeVisible: true
+      }
+    }
+  }
+},
+```
 
 ### Example layer to query
 

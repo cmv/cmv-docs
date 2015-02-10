@@ -1,6 +1,22 @@
 # StreetView
 
-### Host Your Own Projection File
+#### Example Config Object
+``` javascript
+streetview: {
+    include: true,
+    id: 'streetview',
+    type: 'floating',
+    path: 'gis/dijit/StreetView',
+    title: 'Google Street View',
+    options: {
+        map: true,
+        mapClickMode: true,
+        openOnStartup: true
+    }
+}
+```
+
+#### Host Your Own Projection File
 If desired, you can load a projection file from your own server instead of using one from spatialreference.org 
 i.e., http://YourServer/projections/102642.js. 
 

@@ -20,11 +20,18 @@ pages:
 - [support.md, 'Getting Started', 'Support']
 - [develop.md, 'Getting Started', 'Development Environment']
 
-# Config:
+
+# Configure:
 - [configure/index.md, 'Configure', 'Introduction']
 - [configure/viewer.md, 'Configure', 'viewer.js']
 - [configure/basemaps.md, 'Configure', 'basemaps.js']
 - [configure/identify.md, 'Configure', 'identify.js']
+- [configure/esriConfig.md, 'Configure', 'esriConfig Section']
+- [configure/mapOptions.md, 'Configure', 'mapOptions Section']
+- [configure/titles.md, 'Configure', 'titles Section']
+- [configure/panes.md, 'Configure', 'panes Section']
+- [configure/operationalLayers.md, 'Configure', 'Operational Layers Section']
+- [configure/widgets.md, 'Configure', 'Widgets Section']
 
 
 # Widgets:
@@ -53,6 +60,7 @@ pages:
 
 # Contribute:
 - [contribute/index.md, 'Contribute', 'Introduction']
+- [contribute/BuildingCustomWidgets.md, 'Contribute', 'Building Custom Widgets']
 - [contribute/ContributingOnGitHub.md, 'Contribute', 'Submitting a Pull Request']
 - [contribute/Committers.md, 'Contribute', 'Committing Changes to CMV']
 

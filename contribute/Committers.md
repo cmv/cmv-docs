@@ -1,4 +1,4 @@
-#Committing changes to CMV (DRAFT)
+# Guide for committing changes to CMV
 
 We would like to make it easier for community members to contribute to CMV using pull requests, even if it makes the task of reviewing and committing these changes a little harder. Pull requests are only ever based on a single branch, however, we maintain more than one active branch. As a result contributors should target their changes at the `develop` branch. This makes the process of contributing a little easier for the contributor since they don't need to concern themselves with the question, "What branch do I base my changes on?" This is already called out in [Contributing On GitHub](ContributingOnGitHub.md).
 

@@ -1,5 +1,7 @@
 # Basemaps
 
+You can choose to display the basemap widget in the application by setting `include: true` in `config\viewer.js`. To set the list of basemaps to appear in the widget modify `config\basemap.js`
+
 #### Example configuration to use custom basemaps displayed in the Basemap Gallery
 
 `config/basemaps.js`

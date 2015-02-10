@@ -1,5 +1,7 @@
 # Bookmarks
 
+A Bookmark represents individual spatial locations of a geographic area. You can use bookmarks to highlight areas on your map you want the user to quickly see. A predefined list of bookmarks can appear in the widget or you may allow the user to add their own bookmarks. Modify `\config\bookmark.js` to create a predefined list for the user. In 'config\viewer.js' you can choose to display the widget as well set the option to allow the user to edit bookmarks.
+
 You can use David Spriggs' [JS Extent Helper](http://psstl.esri.com/apps/extenthelper/) to obtain extents to modify the `viewer\js\config\bookmarks.js` file. You can add default bookmarks as you wish for the end user to utilize when the app loads. Also, you can allow the end user to edit the bookmarks as well. To allow the end user to modify the bookmarks set `editable:` to true. 
 
 ## Example Configuration File

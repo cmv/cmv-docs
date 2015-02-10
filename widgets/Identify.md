@@ -1,7 +1,18 @@
 # Identify
 
+#### Example Config Object
+``` javascript
+identify: {
+   include: true,
+   id: 'identify',
+   type: 'invisible',
+   path: 'gis/dijit/Identify',
+   options: 'config/identify'
+                  },
+```
+
 ### Identify widget configuration file
-The file can be found here `viewer/js/config/identify.js`. CMV comes with examples inside this file. Review this file on how to configure the widget for your use.
+The file can be found here `viewer/js/config/identify.js`. CMV comes with examples inside this file. Review this file on how to configure the widget for your use. 
 
 **Note** CMV uses the [PopupTemplate Class](https://developers.arcgis.com/javascript/jsapi/popuptemplate-amd.html) for the Identify widget. The  [ArcGIS JS API Documentation](https://developers.arcgis.com/javascript/jshelp/intro_popuptemplate.html) needs revision to clarify the use of the `fieldInfos:` array when using the PopupTemplate Class. On the page linked above the section named "fieldInfo structure:" states that `fieldName:` comes from the name of the field. This is vague and is clarified below.
 

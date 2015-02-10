@@ -49,6 +49,7 @@ Enhancements and bug fixes from the user community are essential for keeping CMV
 
 # Additional Resources
 
+- [Guide for CMV Committers](Committers.md)
 - [General GitHub documentation](http://help.github.com/)
 - [GitHub pull request documentation](http://help.github.com/send-pull-requests/)
 - [Gitter.im Chat Room](https://gitter.im/cmv/cmv-app/)
