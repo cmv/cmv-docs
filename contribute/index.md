@@ -10,7 +10,7 @@ There are many ways to contribute to CMV:
 
 4. __Join the Chat Room__ - Lots of us in CMV community hang out in the [chat room on Gitter](https://gitter.im/cmv/cmv-app/). Feel free to hangout with us, answer questions and throw out ideas.
 
-5. __User contributed widgets__ - For general information on how to build a CMV widget read [Building Custom Widgets] (contribute/BuildingCustomWidgets). Users can submit widgets to the [cmv-contrib-widgets](https://github.com/cmv/cmv-contrib-widgets) repo. These widgets are created and submitted by users. Head on over and read the details.
+5. __User contributed widgets__ - For general information on how to build a CMV widget read [Building Custom Widgets](contribute/BuildingCustomWidgets). Users can submit widgets to the [cmv-contrib-widgets](https://github.com/cmv/cmv-contrib-widgets) repo. These widgets are created and submitted by users. Head on over and read the details.
 
 6. __Propose a Feature__ - If there is a feature you would like to request, add it to the [issues list](https://github.com/cmv/cmv-app/issues) for consideration.
 
