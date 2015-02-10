@@ -26,12 +26,15 @@ pages:
 - [configure/viewer.md, 'Configure', 'viewer.js']
 - [configure/basemaps.md, 'Configure', 'basemaps.js']
 - [configure/identify.md, 'Configure', 'identify.js']
-- [configure/esriConfig.md, 'Configure', 'esriConfig Section']
-- [configure/mapOptions.md, 'Configure', 'mapOptions Section']
-- [configure/titles.md, 'Configure', 'titles Section']
-- [configure/panes.md, 'Configure', 'panes Section']
-- [configure/operationalLayers.md, 'Configure', 'Operational Layers Section']
-- [configure/widgets.md, 'Configure', 'Widgets Section']
+
+
+# Viewer.js:
+- [configure/esriConfig.md, 'Viewer.js', 'esriConfig']
+- [configure/mapOptions.md, 'Viewer.js', 'MapOptions']
+- [configure/operationalLayers.md, 'Viewer.js', 'Operational Layers']
+- [configure/panes.md, 'Viewer.js', 'Panes']
+- [configure/titles.md, 'Viewer.js', 'Titles']
+- [configure/widgets.md, 'Viewer.js', 'Widgets']
 
 
 # Widgets:
