@@ -3,7 +3,7 @@ cmv-docs
 
 #Documentation for [CMV - The Configurable Viewer](http://cmv.io/)
 
-View the Docs @ [ReadTheDocs.org](http://cmv.readthedocs.org/])
+View the Docs @ [docs.cmv.io](http://docs.cmv.io)
 
 ### Contributing to the Documentation
 
