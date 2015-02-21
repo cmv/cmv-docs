@@ -1,8 +1,8 @@
-# Advanced Find Widget Overview
+# Advanced Find
 
 The Advanced Find widget gives you additional configuration options not found in the basic Find widget.  The configuration builds on the configuration structure for the basic Find widget and adds additional properties to control the behavior of the widget.  In fact, you can use a configuration from the basic Find widget and it should work without any modifications.
 
-The additional options include
+### Features
 
 * Configurable columns for each query
 * Configurable sort for each query
@@ -11,7 +11,7 @@ The additional options include
 * Configurable zoom extent scale factor - this will be used to expand the extent when setting extent on the map.
 * Options for controlling FindTask's exact match option and how zoom is handled when selecting results in the result list.
 
-## Important concepts
+#### Important concepts
 
 When configuring the various options, it's important to remember that the widget is based on the FindTask and all results will be a FindResult object.  A FindResult object will contain a **feature** attribute which is a Graphic object.  This means it will have an **attributes** object with the properties of each result as specified by the layer in the base service.
 
@@ -19,7 +19,7 @@ It is important to recognize that the attribute names in this **attributes** pro
 
 It is also important to understand that different layers in a service can have very different attributes but the grid columns you specify apply to all layers included in the find task.  It is therefore recommended to achieve best results that you either limit the layers included in the find task to layers that have similar attributes *or*, limit the columns you specify to fields shared by all layers.
 
-## Tips
+#### Tips
 
 If you can control the service, it may be useful to use common aliases for fields in different layers.  For example, the following field names have been given a common alias:
 
@@ -38,13 +38,13 @@ RESNAME -> Name
 Use a get function (detailed below) to compute and store a value on each FindResult item in your results.  A get function will be invoked and passed the FindResult object.  You can test for different properties to format the returned string.
 
 
-## Specifying columns
+### Specifying columns
 
 There are two ways to specify columns.  Each has it's own benefits but follows the rules outlined in the dgrid documentation for specifying grid structures.
 
 Using an the array approach gives more flexibility but the object form is a handy shortcut for simple configurations.
 
-### As an array of objects
+#### As an array of objects
 
 Add a 'gridColumns' property to the query object.  The value should be an array of objects with the following properties:
 
@@ -55,8 +55,15 @@ Add a 'gridColumns' property to the query object.  The value should be an array 
 - 'visible' <true/false>: set to false to compute and store a value on each FindResult item without displaying it in a column.  This is useful for sorting.
 - 'width': initial width of the column
 
+```javascript
+gridColumns: [
+    { field: 'Name', label: 'Name' },
+    { field: 'layerName', label: 'Layer', width: 100, sortable: false, resizable: false }
+]
+```
 
-### As an object
+
+#### As an object
 
 This is a handy shortcut for specifying column defininitons but is much less flexible.  Check the dgrid documentation for details.
 
@@ -64,7 +71,14 @@ Another way to specify a column is to use the get function.  Using this approach
 
 You can specify a visible property for each property.  Setting this to false is a useful way of computing and storing a property which can be specified as a attribute to sort on but will not be shown in the grid:
 
-#### Get Function
+```javascript
+gridColumns: [
+    Name: 'Name',
+    layerName: 'Layer'
+]
+```
+
+##### Get Function
 
 The get function can be used to compute and return a string to display in a column.
 ```
@@ -81,17 +95,38 @@ sort: [
 ]
 ```
 
-## Prompt
+### Prompt
 
 You can add a **prompt** property to each query object to set the placeholder or prompt text in the search input for the query.
 
-## Selection mode
+```javascript
+queries: [
+    {
+        ...
+        prompt: 'Enter text to search for'
+        ...
+    }
+]
+```
+
+### Selection mode
 
 You can add a **selectionMode** property to control what results users can select in the results grid.  You need to specify any of the dgrid Selection mixin modes.
 
 You can set this both for all queries (specify as a sibling of the **queries** property) and optionally override for each query
 
-## Symbology
+```javascript
+queries: [
+    {
+        ...
+        selectionMode: 'single' //override for this query
+        ...
+    }
+],
+selectionMode: 'extended' //default for all queries. Can be single,extended,multiple,none
+```
+
+### Symbology
 
 You can add a **resultsSymbols** property to override the default symbology of each FindResult.  You can also add a **selectedSymbols** property to override the symbology used to depict selected find results in the map.
 
@@ -103,8 +138,66 @@ Each is an object with
 
 properties.  Each of which must be a fully formed JSON symbol definition appropriate to the geometry type.  Check viewer.js for examples.
 
+```javascript
+resultsSymbols: {
+    polygon: {
+        type   : 'esriSFS',
+        style  : 'esriSFSSolid',
+        color  : [255, 0, 0, 62],
+        outline: {
+            type : 'esriSLS',
+            style: 'esriSLSSolid',
+            color: [255, 0, 255, 127.5],
+            width: 2
+        }
+    },
+    point: {
+        type   : 'esriSMS',
+        style  : 'esriSMSCircle',
+        size   : 25,
+        color  : [255, 0, 0, 62],
+        angle  : 0,
+        xoffset: 0,
+        yoffset: 0,
+        outline: {
+            type : 'esriSLS',
+            style: 'esriSLSSolid',
+            color: [255, 0, 0, 255],
+            width: 2
+        }
+    }
+},
+selectionSymbols: {
+    polygon: {
+        type   : 'esriSFS',
+        style  : 'esriSFSSolid',
+        color  : [255, 0, 0, 62],
+        outline: {
+            type : 'esriSLS',
+            style: 'esriSLSSolid',
+            color: [255, 0, 0, 255],
+            width: 3
+        }
+    },
+    point: {
+        type   : 'esriSMS',
+        style  : 'esriSMSCircle',
+        size   : 25,
+        color  : [255, 0, 0, 62],
+        angle  : 0,
+        xoffset: 0,
+        yoffset: 0,
+        outline: {
+            type : 'esriSLS',
+            style: 'esriSLSSolid',
+            color: [255, 0, 0, 255],
+            width: 2
+        }
+    }
+}
+```
 
-## Custom grid event functions
+### Custom grid event functions
 
 You can add custom handlers for dgrid events by adding a **customGridHandlers** property to each query which should be an array of objects:
 
@@ -117,7 +210,7 @@ You can add custom handlers for dgrid events by adding a **customGridHandlers** 
 ]
 ```
 
-## Sample widget config
+### Sample widget config
 
 ```javascript
 {
