@@ -38,6 +38,7 @@ pages:
 
 
 # Widgets:
+- [widgets/AdvancedFind.md, 'Widgets', 'AdvancedFind']
 - [widgets/index.md, 'Widgets', 'Introduction']
 - [widgets/Basemaps.md, 'Widgets', 'BaseMaps']
 - [widgets/Bookmarks.md, 'Widgets', 'Bookmarks']
