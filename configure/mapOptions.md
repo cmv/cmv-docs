@@ -4,6 +4,8 @@
 
 * **Copyright Note For Your Map Services:** CMV uses the compact build of the ArcGIS JavaScript API. This effects the `showAttribution:` option where the compact build sets it to `false` by default. The result is that your copyright information will not be displayed on the map. In `mapOptions:{}` add `showAttribution: true` to override the default setting when using the compact build of the API. See the three examples below on how to use `showAttribution:` if you need to display a copyright with your map services.
 
+* If you want to have the large zoom slider in your map like this `sliderStyle: 'large'`, you will need to use the full build of the JavaScript API,  CMV uses the compact build by default.
+
 #### Example: mapOptions using a basemap from ArcGIS Online:
 ``` javascript
 mapOptions: {
