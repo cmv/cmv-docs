@@ -141,7 +141,7 @@ The `layerInfo` object contains configuration options for each layer control. La
 
 ### Control Options
 
-All layer types have common options while some options are specific to certain layer types. All `controlOptions` are Boolean.
+All layer types have common options while some options are specific to certain layer types. All `controlOptions` are Boolean except for `subLayerMenu`, which is an object.
 
 | Option | Description | Affects |
 | :----: | ----------- | ------- |
@@ -155,6 +155,42 @@ All layer types have common options while some options are specific to certain l
 | `sublayers` | When `false` dynamic folder/sublayer structure is not created. | dynamic |
 | `metadataUrl` | When `true` and layer has `url` property (ArcGIS layers) links to service URL. When a URL links to said URL. | all layers |
 | `allSublayerToggles` | When `false` toggle all sublayers on/off layer menu items will not be included. | dynamic |
+| `subLayerMenu` | an object consisting of a key representing a layer type and a value an array of menu items | all layers of type key given
+
+#### Sub Layer Menus
+Each menu item in the array will apply to each layer of the type specified in the key. Each menu item inside the array has the following properties:
+* `label` - the string to display in the menu item
+* `iconClass` - the font awesome icon class to add to the menu
+* `topic` - the topic to publish when the menu item is clicked
+
+```JavaScript
+ subLayerMenu: {
+  dynamic: [{
+      label: 'Query Layer...',
+      iconClass: 'fa fa-search fa-fw',
+      topic: 'queryLayer'
+  }, {
+      label: 'Open Attribute Table',
+      topic: 'openTable',
+      iconClass: 'fa fa-table fa-fw'
+  }]
+ }
+}
+```
+The menu can be overridden on a per layer basis also using the layers' `layerControlLayerInfos.menu` property. The `menu` property is an array of menu items.
+```JavaScript
+layerControlLayerInfos: {
+ menu: [{
+      label: 'Query Layer...',
+      iconClass: 'fa fa-search fa-fw',
+      topic: 'queryLayer'
+  }, {
+      label: 'Open Attribute Table',
+      topic: 'openTable',
+      iconClass: 'fa fa-table fa-fw'
+  }]
+}
+```
 
 ### Topics
 
@@ -175,6 +211,15 @@ topic.subscribe('layerControl/layerToggle', function (r) {
 topic.subscribe('layerControl/setVisibleLayers', function (r) {
     console.log(r.id); //layer id
     console.log(r.visibleLayers); //array of set visible layer ids
+});
+```
+
+`LayerControl/menuItemTopic` is published when a sublayer menu item is clicked.
+
+```JavaScript
+topic.subscribe('layerControl/menuItemTopic', function (r) {
+    console.log(r.layer); //layer id
+    console.log(r.subLayer); //array of set visible layer ids
 });
 ```
 
