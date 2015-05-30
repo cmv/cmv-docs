@@ -158,7 +158,7 @@ All layer types have common options while some options are specific to certain l
 | `subLayerMenu` | an object consisting of a key representing a layer type and a value an array of menu items | all layers of type key given
 
 #### Sub Layer Menus
-Each menu item in the array will apply to each layer of the type specified in the key. Each menu item inside the array has the following properties:
+This feature is currently only available on dynamic layers. Each menu item in the array will apply to each layer of the type specified in the key. Each menu item inside the array has the following properties:
 * `label` - the string to display in the menu item
 * `iconClass` - the font awesome icon class to add to the menu
 * `topic` - the topic to publish when the menu item is clicked
