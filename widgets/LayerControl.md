@@ -155,10 +155,10 @@ All layer types have common options while some options are specific to certain l
 | `sublayers` | When `false` dynamic folder/sublayer structure is not created. | dynamic |
 | `metadataUrl` | When `true` and layer has `url` property (ArcGIS layers) links to service URL. When a URL links to said URL. | all layers |
 | `allSublayerToggles` | When `false` toggle all sublayers on/off layer menu items will not be included. | dynamic |
-| `subLayerMenu` | an object consisting of a key representing a layer type and a value an array of menu items | all layers of type key given
+| `subLayerMenu` | an object consisting of a key representing a layer type and a value an array of menu items | all layers of type key given [Develop version currently](https://github.com/cmv/cmv-app/blob/develop/viewer/js/gis/dijit/LayerControl/controls/_DynamicSublayer.js#L83)
 
 #### Sub Layer Menus
-This feature is currently only available on dynamic layers. Each menu item in the array will apply to each layer of the type specified in the key. Each menu item inside the array has the following properties:
+This feature is currently only available on dynamic layers in the [development branch of cmv](https://github.com/cmv/cmv-app/blob/develop/viewer/js/gis/dijit/LayerControl/controls/_DynamicSublayer.js#L83). Each menu item in the array will apply to each layer of the type specified in the key. Each menu item inside the array has the following properties:
 * `label` - the string to display in the menu item
 * `iconClass` - the font awesome icon class to add to the menu
 * `topic` - the topic to publish when the menu item is clicked
