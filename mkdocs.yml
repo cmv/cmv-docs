@@ -13,62 +13,53 @@ theme: yeti
 #theme: readthedocs
 
 pages:
-#Introduction
-- [index.md, 'Getting Started', 'Introduction']
-- [installation.md, 'Getting Started', 'Installation']
-- [configure/index.md, 'Getting Started', 'Configure']
-- [support.md, 'Getting Started', 'Support']
-- [develop.md, 'Getting Started', 'Development Environment']
-
-
-# Configure:
-- [configure/index.md, 'Configure', 'Introduction']
-- [configure/viewer.md, 'Configure', 'viewer.js']
-- [configure/basemaps.md, 'Configure', 'basemaps.js']
-- [configure/identify.md, 'Configure', 'identify.js']
-
-
-# Viewer.js:
-- [configure/esriConfig.md, 'Viewer.js', 'esriConfig']
-- [configure/mapOptions.md, 'Viewer.js', 'MapOptions']
-- [configure/operationalLayers.md, 'Viewer.js', 'Operational Layers']
-- [configure/panes.md, 'Viewer.js', 'Panes']
-- [configure/titles.md, 'Viewer.js', 'Titles']
-- [configure/widgets.md, 'Viewer.js', 'Widgets']
-
-
-# Widgets:
-- [widgets/index.md, 'Widgets', 'Introduction']
-- [widgets/Basemaps.md, 'Widgets', 'BaseMaps']
-- [widgets/Bookmarks.md, 'Widgets', 'Bookmarks']
-- [widgets/Directions.md, 'Widgets', 'Directions']
-- [widgets/Draw.md, 'Widgets', 'Draw']
-- [widgets/Editor.md, 'Widgets', 'Editor']
-- [widgets/Find.md, 'Widgets', 'Find']
-- [widgets/Geocoder.md, 'Widgets', 'Geocoder']
-- [widgets/Growler.md, 'Widgets', 'Growler']
-- [widgets/Help.md, 'Widgets', 'Help']
-- [widgets/HomeButton.md, 'Widgets', 'Home Button']
-- [widgets/Identify.md, 'Widgets', 'Identify']
-- [widgets/LayerControl.md, 'Widgets', 'Layer Control']
-- [widgets/Legend.md, 'Widgets', 'Legend']
-- [widgets/LocateButton.md, 'Widgets', 'Locate Button']
-- [widgets/MapInfo.md, 'Widgets', 'Map Info']
-- [widgets/Measurement.md, 'Widgets', 'Measurement']
-- [widgets/OverviewMap.md, 'Widgets', 'Overview Map']
-- [widgets/Print.md, 'Widgets', 'Print']
-- [widgets/Scalebar.md, 'Widgets', 'Scalebar']
-- [widgets/StreetView.md, 'Widgets', 'StreetView']
-
-
-# Contribute:
-- [contribute/index.md, 'Contribute', 'Introduction']
-- [contribute/BuildingCustomWidgets.md, 'Contribute', 'Building Custom Widgets']
-- [contribute/ContributingOnGitHub.md, 'Contribute', 'Submitting a Pull Request']
-- [contribute/Committers.md, 'Contribute', 'Committing Changes to CMV']
-
-# About
-- [about/license.md, 'About', 'License']
-- [about/changelog.md, 'About', 'Change Log']
-- [about/team.md, 'About', 'The CMV Team']
+- Getting Started:
+  - Introduction: index.md
+  - Installation: installation.md
+  - Configure: configure/index.md
+  - Support: support.md
+  - Development Environment: develop.md
+- Configure:
+  - Introduction: configure/index.md
+  - viewer.js: configure/viewer.md
+  - basemaps.js: configure/basemaps.md
+  - identify.js: configure/identify.md
+- Viewer.js:
+  - esriConfig: configure/esriConfig.md
+  - MapOptions: configure/mapOptions.md
+  - Operational Layers: configure/operationalLayers.md
+  - Panes: configure/panes.md
+  - Titles: configure/titles.md
+  - Widgets: configure/widgets.md
+- Widgets:
+  - Introduction: widgets/index.md
+  - BaseMaps: widgets/Basemaps.md
+  - Bookmarks: widgets/Bookmarks.md
+  - Directions: widgets/Directions.md
+  - Draw: widgets/Draw.md
+  - Editor: widgets/Editor.md
+  - Find: widgets/Find.md
+  - Geocoder: widgets/Geocoder.md
+  - Growler: widgets/Growler.md
+  - Help: widgets/Help.md
+  - Home Button: widgets/HomeButton.md
+  - Identify: widgets/Identify.md
+  - Layer Control: widgets/LayerControl.md
+  - Legend: widgets/Legend.md
+  - Locate Button: widgets/LocateButton.md
+  - Map Info: widgets/MapInfo.md
+  - Measurement: widgets/Measurement.md
+  - Overview Map: widgets/OverviewMap.md
+  - Print: widgets/Print.md
+  - Scalebar: widgets/Scalebar.md
+  - StreetView: widgets/StreetView.md
+- Contribute:
+  - Introduction: contribute/index.md
+  - Building Custom Widgets: contribute/BuildingCustomWidgets.md
+  - Submitting a Pull Request: contribute/ContributingOnGitHub.md
+  - Committing Changes to CMV: contribute/Committers.md
+- About:
+  - License: about/license.md
+  - Change Log: about/changelog.md
+  - The CMV Team: about/team.md
 
