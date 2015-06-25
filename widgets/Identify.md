@@ -86,3 +86,135 @@ electric: {
 ![Material](https://edop.gru.com/Material.PNG)
 ![PoleSize](https://edop.gru.com/PoleSize.PNG)
 ![Agreement](https://edop.gru.com/Agreement.PNG)
+
+#### Using content formatter function in popup
+The JavascriptAPI has [a nice tutorial on formatting the info window content](https://developers.arcgis.com/javascript/jshelp/intro_formatinfowindow.html). Specifying a content formatter will allow you to do things like:
+* Programatically generate html for the popup (bullet list)
+* Alter field values (convert a image url to image)
+* Embed other widgets like a tab container and chart/table in the popup window
+
+At the time of this writing, the [develop branch of cmv](https://github.com/cmv/cmv-app/blob/develop/viewer/js/gis/dijit/Identify.js#L325) will check for a `content` property in each `identifies` object. This proerty can be either a **string or function**.
+Example usage:
+``` javascript
+electric: {
+    1: {
+	title: 'Pole',
+	content: formatterFunction //or html string
+	}
+}
+```
+
+In the example above, formatterFunction is a **global** function, which Esri recommends. However, there is a safer and better way to pass a function and avoid adding globals to the application.
+
+Convert the identify.js into a config similar to the viewer.js:
+```JavaScript
+define([
+	//include any widgets and dojo class paths you want to use here
+], function (/* each widget you include should have a variable here */) {
+	return {
+		map: true,
+	        mapClickMode: true,
+	        mapRightClickMenu: true,
+	        identifyLayerInfos: true,
+	        identifyTolerance: 5,
+	        identifies: {}
+	};
+});
+```
+Just before the return statement, create a local variable, lets call it formatters:
+```JavaScript
+var formatters = {
+	link: function(identifyResults) {
+		//add logic to format the results and return an html string or domNode
+	}
+};
+```
+
+Add a layer to the identifies and add the `content: formatters.link`
+
+To add something more complex like a TabContainer to the identify window:
+```JavaScript
+var formatters = {
+	attributeList: function (identifyInfo) {
+            var listItem = '<li>{0}: {1}</li>';
+            var html = ['<ul>'];
+            for (var a in identifyInfo.attributes) {
+                //make sure a is an own property
+                if (identifyInfo.attributes.hasOwnProperty(a)) {
+                    html.push(lang.replace(listItem, [a, identifyInfo.attributes[a]]));
+                }
+            }
+            html.push('</ul>');
+            return html.join('');
+        },
+	tabContainer: function(identifyResults) {
+		var container = new TabContainer(
+			style: 'height: 100%; width: 100%;'
+                }, domConstruct.create('div'));
+		container.addChild(new ContentPane({
+			title: 'my title',
+			content: 'You clicked a feature. The results are in the next tab'
+		});
+		container.addChild(new ContentPane({
+			title: 'Attributes',
+			content: formatters.attributeList(identifyresults)
+		});
+		return container.domNode;
+	}
+};
+```
+
+The final identify result: 
+```JavaScript
+define([
+    'dojo/_base/lang',
+    'dijit/layout/TabContainer',
+    'dijit/layout/ContentPane',
+    'dojo/dom-construct',
+], function (lang, Container, ContentPane, domConstruct) {
+    var formatters = {
+        attributeList: function (identifyResults) {
+            var listItem = '<li>{0}: {1}</li>';
+            var html = ['<ul>'];
+            for (var a in identifyResults.attributes) {
+                //make sure a is an own property
+                if (identifyResults.attributes.hasOwnProperty(a)) {
+                    html.push(lang.replace(listItem, [a, identifyResults.attributes[a]]));
+                }
+            }
+            html.push('</ul>');
+            return html.join('');
+        },
+	tabContainer: function(identifyResults) {
+		var container = new TabContainer(
+			style: 'height: 100%; width: 100%;'
+                }, domConstruct.create('div'));
+		container.addChild(new ContentPane({
+			title: 'my title',
+			content: 'You clicked a feature. The results are in the next tab'
+		});
+		container.addChild(new ContentPane({
+			title: 'my title',
+			content: formatters.attributeList(identifyresults)
+		});
+		return container.domNode;
+	}
+    };
+    return {
+        map: true,
+        mapClickMode: true,
+        mapRightClickMenu: true,
+        identifyLayerInfos: true,
+        identifyTolerance: 5,
+        identifies: {
+	        electric: {
+		    1: {
+			title: 'Pole',
+			content: formatters.tabContainer
+			}
+		}
+        }
+
+    };
+});
+```
