@@ -27,7 +27,6 @@ Check out the demo site to get a taste for some of the capabilities you can use 
 
 CMV comes with many "core" widgets including:
 
-- [Advanced Find](widgets/AdvancedFind)
 - [Base Maps](widgets/Basemaps)
 - [Bookmarks](widgets/Bookmarks)
 - [Directions](widgets/Directions)

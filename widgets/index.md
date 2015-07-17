@@ -2,8 +2,6 @@
 
 CMV comes with many "core" widgets including:
 
-#### [Advanced Find](widgets/AdvancedFind)
-
 #### [Base Maps](widgets/Basemaps)
 
 #### [Bookmarks](widgets/Bookmarks)
