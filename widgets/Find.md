@@ -6,6 +6,15 @@ The Find widget allows you to configure multiple searches against an ArcGiS map 
 * many fields of a single layer
 * or on many fields of many layers
 
+## Features
+
+* Configurable columns for each query
+* Configurable sort for each query
+* Configurable prompt for each query
+* Configurable symbology, both the base symbology used to show each find result on the map as well as a different symbology for the selected find result(s)
+* Configurable zoom extent scale factor - this will be used to expand the extent when setting extent on the map.
+* Options for controlling FindTask's exact match option and how zoom is handled when selecting results in the result list.
+
 ## Important concepts
 
 When configuring the various options, it's important to remember that the widget is based on the [FindTask](https://developers.arcgis.com/javascript/jsapi/findtask-amd.html) and all results will be a FindResult object.  A FindResult object will contain a **feature** attribute which is a Graphic object.  This means it will have an **attributes** object with the properties of each result as specified by the layer in the base service.
@@ -31,7 +40,6 @@ RESNAME -> Name
 ```
 
 You can also use a `get` function (detailed below) to compute and store a value on each FindResult item in your results.  A get function will be invoked and passed the FindResult object.  You can test for different properties to format the returned string.
-
 
 ## Specifying columns
 
@@ -77,7 +85,6 @@ sort: [
 ]
 ```
 
-
 ## Prompt
 
 You can add a **prompt** property to each query object to set the placeholder or prompt text in the search input for the query.
@@ -100,7 +107,6 @@ Each is an object with
 
 properties.  Each of which must be a fully formed JSON symbol definition appropriate to the geometry type.  Check viewer.js for examples.
 
-
 ## Custom grid event functions
 
 You can add custom handlers for dgrid events by adding a **customGridHandlers** property which should be an array of objects:
@@ -113,8 +119,6 @@ customGridHandlers: [
   }
 ]
 ```
-
-
 
 #### Example Config Object
 ``` 
