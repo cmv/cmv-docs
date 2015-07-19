@@ -234,8 +234,8 @@ topic.subscribe('layerControl/menuItemTopic', function (r) {
 });
 ```
 
+<!--
 #### Layer Control TODO
-
 Do not include this section in docs outside this file.
 
 1. Support all layer types CMV supports (csv, kml, stream, wms)
@@ -244,3 +244,4 @@ Do not include this section in docs outside this file.
 3. Integrate with new layer options for widgets system
 4. Optional plugins for leveraging layer manipulation capabilities, e.g. ui for user to change rendering on image layer, change renderer for user added shape file or CSV, etc.
 5. Users' suggestions for improvements
+-->
