@@ -214,12 +214,23 @@ topic.subscribe('layerControl/setVisibleLayers', function (r) {
 });
 ```
 
-`LayerControl/menuItemTopic` is published when a sublayer menu item is clicked.
+`LayerControl/menuItemTopic` is published when a dynamic sublayer menu item is clicked.
 
 ```JavaScript
 topic.subscribe('layerControl/menuItemTopic', function (r) {
     console.log(r.layer); //layer id
     console.log(r.subLayer); //array of set visible layer ids
+    console.log(r.iconNode); //a domNode to toggle font awesome classes on
+    console.log(r.menuItem); //the clicked menu item object in case you want to modify it
+
+    //modify the iconNode to show that something happened to this layer
+    if (r.iconNode) {
+        if (domClass.contains(r.iconNode, 'fa-fire')) {
+            domClass.remove(r.iconNode, 'fa-fire');
+        } else {
+            domClass.add(r.iconNode, 'fa-fire');
+        }
+    }
 });
 ```
 
