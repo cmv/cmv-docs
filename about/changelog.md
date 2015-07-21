@@ -1,5 +1,9 @@
 # CMV Releases
 
+#### [Version 1.3.4](https://github.com/cmv/cmv-app/releases/tag/v1.3.4) (July 21, 2015)
+
+#### [Version 1.3.3](https://github.com/cmv/cmv-app/releases/tag/v1.3.3) (February 10, 2015)
+
 #### [Version 1.3.2](https://github.com/cmv/cmv-app/releases/tag/v1.3.2) (December 2, 2014)
 
 #### [Version 1.3.1](https://github.com/cmv/cmv-app/releases/tag/v1.3.1) (October 31, 2014)
