@@ -6,7 +6,7 @@ There are many ways to contribute to CMV:
 
 2. __Create documentation__ This documentation is a living document that is updated frequently by the community. Please feel free to suggest changes in the [documentation issues list](https://github.com/cmv/cmv-app/issues).
 
-3. __Answer Questions at Stack Exchange__ - [gis.stackexchange.com](https://gis.stackexchange.com/tag/cmv) is the prime destination for our `Frequently Asked Questions (FAQs)`. Please answer questions and help new developers get more comfortable with CMV.
+3. __Answer Questions at Stack Exchange__ - [gis.stackexchange.com](https://gis.stackexchange.com/tags/cmv) is the prime destination for our `Frequently Asked Questions (FAQs)`. Please answer questions and help new developers get more comfortable with CMV.
 
 4. __Join the Chat Room__ - Lots of us in CMV community hang out in the [chat room on Gitter](https://gitter.im/cmv/cmv-app/). Feel free to hangout with us, answer questions and throw out ideas.
 

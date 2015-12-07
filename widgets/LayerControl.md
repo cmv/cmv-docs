@@ -214,17 +214,28 @@ topic.subscribe('layerControl/setVisibleLayers', function (r) {
 });
 ```
 
-`LayerControl/menuItemTopic` is published when a sublayer menu item is clicked.
+`LayerControl/menuItemTopic` is published when a dynamic sublayer menu item is clicked.
 
 ```JavaScript
 topic.subscribe('layerControl/menuItemTopic', function (r) {
     console.log(r.layer); //layer id
     console.log(r.subLayer); //array of set visible layer ids
+    console.log(r.iconNode); //a domNode to toggle font awesome classes on
+    console.log(r.menuItem); //the clicked menu item object in case you want to modify it
+
+    //modify the iconNode to show that something happened to this layer
+    if (r.iconNode) {
+        if (domClass.contains(r.iconNode, 'fa-fire')) {
+            domClass.remove(r.iconNode, 'fa-fire');
+        } else {
+            domClass.add(r.iconNode, 'fa-fire');
+        }
+    }
 });
 ```
 
+<!--
 #### Layer Control TODO
-
 Do not include this section in docs outside this file.
 
 1. Support all layer types CMV supports (csv, kml, stream, wms)
@@ -233,3 +244,4 @@ Do not include this section in docs outside this file.
 3. Integrate with new layer options for widgets system
 4. Optional plugins for leveraging layer manipulation capabilities, e.g. ui for user to change rendering on image layer, change renderer for user added shape file or CSV, etc.
 5. Users' suggestions for improvements
+-->
