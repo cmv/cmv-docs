@@ -30,7 +30,7 @@ The following list indicates tested and untested layers that can be used in CMV
 | osm         | OpenStreetMap           | x      |
 | tiled       | ArcGISTiledMapService   | x      |
 | wms         | WMS                     | x      |
-| wmts        | WMTS                    | x      |
+| wmts        | WMTS                    |        |
 
 ## Editor
 Setting `exclude: true` in the `editorLayerInfos` property allows you to exclude the feature layer from the editor widget. Additional options that are found under the `layerInfo` portion of the [editor api docs](https://developers.arcgis.com/javascript/jsapi/editor-amd.html) may be provided in this object
