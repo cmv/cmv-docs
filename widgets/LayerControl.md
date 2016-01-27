@@ -6,6 +6,7 @@ A layer control widget for CMV. Just don't call it a TOC.
 
 * Toggle layer visibility
 * Layer menu with Zoom To Layer, Transparency and Layer Swipe
+* Capabilities to create custom dynamic sublayer menus
 * Legends for ArcGIS layers
 * Sublayer/folder structure and toggling for ArcGIS dynamic layers
   * can be disabled
@@ -155,13 +156,13 @@ All layer types have common options while some options are specific to certain l
 | `sublayers` | When `false` dynamic folder/sublayer structure is not created. | dynamic |
 | `metadataUrl` | When `true` and layer has `url` property (ArcGIS layers) links to service URL. When a URL links to said URL. | all layers |
 | `allSublayerToggles` | When `false` toggle all sublayers on/off layer menu items will not be included. | dynamic |
-| `subLayerMenu` | an object consisting of a key representing a layer type and a value an array of menu items | all layers of type key given [Develop version currently](https://github.com/cmv/cmv-app/blob/develop/viewer/js/gis/dijit/LayerControl/controls/_DynamicSublayer.js#L83)
+| `subLayerMenu` | An object consisting of a key value pairs where they key is a layer type and the value is an array of menu items | All layers of type key given
 
-#### Sub Layer Menus
-This feature is currently only available on dynamic layers in the [development branch of cmv](https://github.com/cmv/cmv-app/blob/develop/viewer/js/gis/dijit/LayerControl/controls/_DynamicSublayer.js#L83). Each menu item in the array will apply to each layer of the type specified in the key. Each menu item inside the array has the following properties:
+#### Sub Layer Menu Items
+Dynamic sublayers can have their own menu. The menu system is set up using dojo/topic so that another widget can listen to when a menu item is clicked, and manipulate or add functionality to the app. Each menu item in the array will apply to each layer of the type specified in the key. Each menu item inside the array has the following properties:
 * `label` - the string to display in the menu item
 * `iconClass` - the font awesome icon class to add to the menu
-* `topic` - the topic to publish when the menu item is clicked
+* `topic` - the topic to publish when the menu item is clicked (see topics below)
 
 ```JavaScript
  subLayerMenu: {
@@ -177,7 +178,7 @@ This feature is currently only available on dynamic layers in the [development b
  }
 }
 ```
-The menu can be overridden on a per layer basis also using the layers' `layerControlLayerInfos.menu` property. The `menu` property is an array of menu items.
+The menu can be completely overridden on a per layer basis also using the layers' `layerControlLayerInfos.menu` property. The `menu` property is an array of menu items.
 ```JavaScript
 layerControlLayerInfos: {
  menu: [{
