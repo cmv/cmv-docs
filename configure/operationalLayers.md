@@ -47,3 +47,12 @@ See the [layer control documentation](./LayerControl) for details on configuring
 
 ## Example
 See [operational layers section in viewer.js] (https://github.com/cmv/cmv-app/blob/master/viewer/js/config/viewer.js#L63) for examples.
+
+## Feature Layer Modes
+Feature layers have a default mode of `ON_DEMAND` so a value is not required. But if you would like to change the mode, you don't have to import `esri/layers/FeatureLayer`, instead you can use the integer value of the mode instead.
+
+Mode           | Integer value
+---------------|--------------
+MODE_SNAPSHOT  | 0
+MODE_ONDEMAND  | 1 
+MODE_SELECTION | 2
