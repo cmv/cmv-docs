@@ -2,10 +2,10 @@
 
 A notification system using `dojo/topic`.
 
-##Topic Usage
+## Topic Usage
 By including the growler widget and using `topic.publish` you can create new growlers. This widget subscribes to the `'growler/growl'` topic.
 
-####Example usage:
+### Example:
 ```javascript
 geocoder.on('select', function(results){
     topic.publish('growler/growl', {
@@ -19,7 +19,7 @@ geocoder.on('select', function(results){
 });
 ```
 
-#### Example Config Object
+## Example Config Object
 ``` javascript
 growler: {
     include: true,

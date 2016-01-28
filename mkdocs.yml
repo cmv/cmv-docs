@@ -1,13 +1,12 @@
 site_name: CMV
+site_description: CMV - The Configurable Map Viewer. Make it your own!
 site_url: http://cmv.io/
 dev_addr: '0.0.0.0:8000'
-use_absolute_urls: true
 
 repo_url: https://github.com/cmv/cmv-app
-description: CMV - The Configurable Map Viewer. Make it your own!
 
 docs_dir: ./
-
+strict: true
 theme: yeti
 #theme: spacelab
 #theme: readthedocs
@@ -62,4 +61,3 @@ pages:
   - License: about/license.md
   - Change Log: about/changelog.md
   - The CMV Team: about/team.md
-

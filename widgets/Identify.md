@@ -1,6 +1,6 @@
 # Identify
 
-#### Example Config Object
+## Example Config Object
 ``` javascript
 identify: {
    include: true,
@@ -11,12 +11,12 @@ identify: {
                   },
 ```
 
-### Identify widget configuration file
-The file can be found here `viewer/js/config/identify.js`. CMV comes with examples inside this file. Review this file on how to configure the widget for your use. 
+## Identify widget configuration file
+The file can be found here `viewer/js/config/identify.js`. CMV comes with examples inside this file. Review this file on how to configure the widget for your use.
 
 **Note** CMV uses the [PopupTemplate Class](https://developers.arcgis.com/javascript/jsapi/popuptemplate-amd.html) for the Identify widget. The  [ArcGIS JS API Documentation](https://developers.arcgis.com/javascript/jshelp/intro_popuptemplate.html) needs revision to clarify the use of the `fieldInfos:` array when using the PopupTemplate Class. On the page linked above the section named "fieldInfo structure:" states that `fieldName:` comes from the name of the field. This is vague and is clarified below.
 
-To display your identify results with attribute values you must **use the _field alias_ as defined in the map service rest end point** and _do not use any other field name or alias defined in the geodatabase_. 
+To display your identify results with attribute values you must **use the _field alias_ as defined in the map service rest end point** and _do not use any other field name or alias defined in the geodatabase_.
 
 You can not reliably use the field name or the alias as defined in the geodatabase. Nor can you reliably use the field name as defined in the map service. You must use the field alias as defined in the map service. Here are some situations as to why you can not reliably use the _field name_ as defined in the map service:
 
@@ -81,19 +81,14 @@ electric: {
 },
 ```
 
-![Identify Results](https://edop.gru.com/IdentifyResults.PNG)
-![FACILITYID](https://edop.gru.com/FacilityID.PNG)
-![Material](https://edop.gru.com/Material.PNG)
-![PoleSize](https://edop.gru.com/PoleSize.PNG)
-![Agreement](https://edop.gru.com/Agreement.PNG)
+## Build your own identify popup
 
-#### Using content formatter function in popup
-The JavascriptAPI has [a nice tutorial on formatting the info window content](https://developers.arcgis.com/javascript/jshelp/intro_formatinfowindow.html). Specifying a content formatter will allow you to do things like:
+The JavascriptAPI has [a nice tutorial](https://developers.arcgis.com/javascript/jshelp/intro_formatinfowindow.html) on formatting the info window content. Specifying a content formatter will allow you to do things like:
 * Programatically generate html for the popup (bullet list)
 * Alter field values (convert a image url to image)
 * Embed other widgets like a tab container and chart/table in the popup window
 
-At the time of this writing, the [develop branch of cmv](https://github.com/cmv/cmv-app/blob/develop/viewer/js/gis/dijit/Identify.js#L325) will check for a `content` property in each `identifies` object. This proerty can be either a **string or function**.
+The identify widget will check for a `content` property in each `identifies` object. This proerty can be either a **string or function**.
 Example usage:
 ``` javascript
 electric: {
@@ -164,7 +159,7 @@ var formatters = {
 };
 ```
 
-The final identify result: 
+The final identify result:
 ```JavaScript
 define([
     'dojo/_base/lang',
