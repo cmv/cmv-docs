@@ -1,49 +1,49 @@
 This file comes with the standard ESRI basemaps already configured to work with the application. Should you want to use your own custom basemaps or mash them up with ESRI basemaps there are a couple of ways to do this.
 
-### What Options Are Available?
+## What Options Are Available?
 1. In an effort to not duplicate documentation it is strongly recommended you become familiar with the ArcGIS API for Javascript.
 
-2. To understand the different parameters or options available to you. 
+2. To understand the different parameters or options available to you.
 
  a) For further customizing your Basemap please refer to  the [ArcGIS API for Javascript -- Basemap](https://developers.arcgis.com/javascript/jsapi/basemap-amd.html).
 
  b) For further customizing your BasemapLayer please refer to the [ArcGIS API for Javascript -- BasemapLayer](https://developers.arcgis.com/javascript/jsapi/basemaplayer-amd.html).
 
-### Getting Started with custom basemaps
+## Getting Started with custom basemaps
 1. In the file `\viewer\js\config\basemaps.js` change `mode: 'agol',` to `mode: 'custom',`
 
-2. Block Comment the preconfigured AGOL basemaps so you can use your custom basemaps. 
+2. Block Comment the preconfigured AGOL basemaps so you can use your custom basemaps.
 ``` javascript
 /*streets: {
-                title: 'Streets'
-            },
-            satellite: {
-                title: 'Satellite'
-            },
-            hybrid: {
-                title: 'Hybrid'
-            },
-            topo: {
-                title: 'Topo'
-            },
-            gray: {
-                title: 'Gray'
-            },
-            oceans: {
-                title: 'Oceans'
-            },
-            'national-geographic': {
-                title: 'Nat Geo'
-            },
-            osm: {
-                title: 'Open Street Map'
-            }
+      title: 'Streets'
+  },
+  satellite: {
+      title: 'Satellite'
+  },
+  hybrid: {
+      title: 'Hybrid'
+  },
+  topo: {
+      title: 'Topo'
+  },
+  gray: {
+      title: 'Gray'
+  },
+  oceans: {
+      title: 'Oceans'
+  },
+  'national-geographic': {
+      title: 'Nat Geo'
+  },
+  osm: {
+      title: 'Open Street Map'
+  }
 */
 ```
 3. **It is recommended when getting started to not delete code right away. By commenting the code you have something you can refer back to.**
 
-###  Implementing your custom basemaps
-1. Remove the Block Comment in the example section of `\viewer\js\config\basemaps.js` for custom basemaps. 
+##  Implementing your custom basemaps
+1. Remove the Block Comment in the example section of `\viewer\js\config\basemaps.js` for custom basemaps.
 ``` javascript
 // examples of custom basemaps
 
@@ -102,19 +102,19 @@ This file comes with the standard ESRI basemaps already configured to work with 
 
 ```javascript
 streets: {
-                title: 'Streets',
-                basemap: new Basemap({
-                    id: 'streets',
-                    layers: [new BasemapLayer({
-                        url: 'http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
-                    })]
-                })
-            },
+    title: 'Streets',
+    basemap: new Basemap({
+        id: 'streets',
+        layers: [new BasemapLayer({
+            url: 'http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
+        })]
+    })
+},
 ```
 
 **Note:** If you were to change the function name from `streets:{}` to `streetscustom:{}` then you would also need to add or change the name in the `basemapsToShow:[]` array to match the name of your function. An example of how this might be done is below.
 
-#### Example configuration to use custom basemaps displayed in the Basemap Gallery
+### Example configuration to use custom basemaps displayed in the Basemap Gallery
 
 ```javascript
 // at CMV version 1.3.0 the three defines below are included and commented out.
@@ -175,8 +175,8 @@ define([
 3. If your tiled services have scales or levels of detail that go in beyond the Esri scales, you can still take advantage of those scales but continue using Esri basemap services albeit with a little more customization.
 
 
-## Zooming in beyond Esri default scales or levels of detail.
- 
+### Zooming in beyond Esri default scales or levels of detail.
+
 **There might be multiple ways to do this so if there are other examples please share. But here is one example.**
 
 * Create a map service and enable caching using your scales, but choose the option to generate tiles manually.
@@ -184,38 +184,38 @@ define([
 * This will publish a service with your scales or levels of detail. While it appears like a cache service     there was no time spent creating the tiles. It is merely being used to define your scales or levels of detail.
 
 * In this example, the service defining scales or levels of detail is called **LODS**. Notice it is the first service defined in Basemap as a BasemapLayer. Therefore the streets Basemap should assume the scales or levels of detail of the **LODS** service. Although we still need to make some other customizations.
- 
-``` basemaps.js ```
 
- ```javascript
+```javascript
+
+//basemaps.js
  streets: {
-                title: 'Clermont County Streets',
-                basemap: new Basemap({
-                    id: 'streets',
-                    layers: [new BasemapLayer({
-                        url: 'http://maps.clermontauditor.org/arcgis/rest/services/WMAS/LODS/MapServer'
-                    }), new BasemapLayer({
-                        url: 'http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
-                    }), new BasemapLayer({
-                        url: 'http://maps.clermontauditor.org/arcgis/rest/services/WMAS/Streetmap/MapServer'
-                    })]
-                })
-            },
- ```
+    title: 'Clermont County Streets',
+    basemap: new Basemap({
+        id: 'streets',
+        layers: [new BasemapLayer({
+            url: 'http://maps.clermontauditor.org/arcgis/rest/services/WMAS/LODS/MapServer'
+        }), new BasemapLayer({
+            url: 'http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
+        }), new BasemapLayer({
+            url: 'http://maps.clermontauditor.org/arcgis/rest/services/WMAS/Streetmap/MapServer'
+        })]
+    })
+},
+```
 
 * By design the template is built to work with Esri basemaps. So the first basemap which gets loaded in the ``` viewer.js ``` file is **streets**. So even if you follow the above steps in ``` basemaps.js ``` the scales will not be honored until some customizations are made to **viewer.js**.
 
 * Around line 23 look for the block of code below. This is what you will need to customize so your scales or levels of detail will be honored when the application loads.
 
-``` viewer.js ```
-
 ```javascript
-		mapOptions: {
-			basemap: 'streets',
-			center: [-96.59179687497497, 39.09596293629694],
-			zoom: 5,
-			sliderStyle: 'small'
-		},
+// viewer.js
+
+mapOptions: {
+  	basemap: 'streets',
+  	center: [-96.59179687497497, 39.09596293629694],
+  	zoom: 5,
+  	sliderStyle: 'small'
+},
 ```
 
 * You will need to create a Basemap and add a BasemapLayer which references your scales.

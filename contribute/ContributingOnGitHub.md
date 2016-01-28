@@ -1,4 +1,4 @@
-# Contributing on GitHub (DRAFT)
+# Contributing on GitHub
 
 Enhancements and bug fixes from the user community are essential for keeping CMV great. We want to keep it as easy as possible to contribute changes. There are a few guidelines that we need contributors to follow so that we can have a chance of keeping on top of things.
 
@@ -12,9 +12,11 @@ Enhancements and bug fixes from the user community are essential for keeping CMV
 
 - Through [GitHub issues](https://github.com/cmv/cmv-app/issue/), or through the #cmv IRC channel on freenode.org, you talk about a feature you would like to see (or a bug), and why it should be in CMV.
 
+- There is also a [gitter.im chatroom](https://gitter.im/cmv/cmv-app), stop by sometime!
+
 - Create a topic branch from where you want to base your work.
 
-    - This is usually the `develop` branch.
+    - This is the `develop` branch.
 
     - To quickly create a topic branch based on develop; git checkout -b fix/my_contribution develop. Please avoid working directly on the master branch.
 

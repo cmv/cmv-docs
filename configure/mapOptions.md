@@ -6,7 +6,7 @@
 
 * If you want to have the large zoom slider in your map like this `sliderStyle: 'large'`, you will need to use the full build of the JavaScript API,  CMV uses the compact build by default.
 
-#### Example: mapOptions using a basemap from ArcGIS Online:
+## Example: mapOptions using a basemap from ArcGIS Online:
 ``` javascript
 mapOptions: {
    basemap: 'streets',
@@ -16,7 +16,7 @@ mapOptions: {
    showAttribution: true
 }
 ```
-#### Example: mapOptions using a custom basemap:
+## Example: mapOptions using a custom basemap:
 In the `define()` add references to `'esri/dijit/Basemap'`, `'esri/dijit/BasemapLayer'` and `'esri/geometry/Point'`
 ``` javascript
 mapOptions: {
@@ -39,7 +39,7 @@ mapOptions: {
 }
 ```
 
-#### Important Chrome Browser Tweak
+## Important Chrome Browser Tweak
 If you notice or experience the map or the application flashing while zooming in & out, or panning here is a workaround.
 
 In ``` config/viewer.js ``` under Map Options add ```navigationMode: 'classic'```
@@ -55,4 +55,3 @@ mapOptions: {
 }
 ```
 Here is a [link](https://developers.arcgis.com/javascript/jsapi/map-amd.html#navigationmode) to the ArcGIS Javascript API docs for a more detailed explanation.
- 
