@@ -1,7 +1,7 @@
 # Scalebar
 
 ### scalebar
-See [Class : Scalebar] (https://developers.arcgis.com/javascript/jsapi/scalebar-amd.html) for parameters
+See [Class : Scalebar](https://developers.arcgis.com/javascript/jsapi/scalebar-amd.html) for parameters
 #### Example Config Object
 ``` javascript
 scalebar: {

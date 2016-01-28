@@ -1,7 +1,7 @@
 # Locate Button
 
-This widget is a wrapper around [LocateButton] (https://developers.arcgis.com/javascript/jsapi/locatebutton-amd.html).
-Centers map to user's location. You can suppress GPS data that will appear in a [InfoTemplate] (https://developers.arcgis.com/javascript/jsapi/infotemplate-amd.html)
+This widget is a wrapper around [LocateButton](https://developers.arcgis.com/javascript/jsapi/locatebutton-amd.html).
+Centers map to user's location. You can suppress GPS data that will appear in a [InfoTemplate](https://developers.arcgis.com/javascript/jsapi/infotemplate-amd.html)
 
 #### Example Config Object
 ``` javascript
