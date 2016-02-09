@@ -1,6 +1,8 @@
 # Home Button
 
-#### Example Config Object
+Esri's out-of-the-box home button widget. See `esri/dijit/HomeButton` [documentation](https://developers.arcgis.com/javascript/jsapi/homebutton-amd.html)
+
+## Example Config Object
 ``` javascript
 homeButton: {
     include: true,

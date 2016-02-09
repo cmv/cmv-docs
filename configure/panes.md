@@ -2,7 +2,7 @@
 
 Basic guide for placing widgets in panes
 
-#### First add a bottom pane. Something like this near the top of your `viewer.js`:
+First add a bottom pane. Something like this near the top of your `viewer.js`:
 
 ``` javascript
 panes: {
@@ -22,7 +22,7 @@ panes: {
 },
 ```
 
-#### Then place your widget there by using `placeAt` in the widget options:
+Then place your widget there by using `placeAt` in the widget options:
 
 ```javascript
 widget: {
@@ -32,13 +32,13 @@ widget: {
 }
 ```
 
-#### That will work for widgets of type `titlePane` and `contentPane`. If you want to use a type of `domNode` you need some content in your pane to attach to:
+That will work for widgets of type `titlePane` and `contentPane`. If you want to use a type of `domNode` you need some content in your pane to attach to:
 
 ```javascript
 content: '<div id="myWidgetContainer"></div>'
 ```
 
-#### Then include the reference to that domNode in the widget options: 
+Then include the reference to that domNode in the widget options: 
 
 ```javascript
 widget: {
