@@ -3,16 +3,16 @@ Use this file to configure CMV and "Make it your own".
 
 The following sections are contained within the viewer.js configuration file.
 
-#### [esriConfig](./esriConfig)
+#### [esriConfig](./esriConfig.md)
 
 #### Default Map Click Mode
 
-#### [Map Options](./mapOptions)
+#### [Map Options](./mapOptions.md)
 
-#### [Titles](./titles)
+#### [Titles](./titles.md)
 
-#### [Panes](./panes)
+#### [Panes](./panes.md)
 
-#### [Operational Layers](./operationalLayers)
+#### [Operational Layers](./operationalLayers.md)
 
-#### [Widgets](./widgets)
+#### [Widgets](./widgets.md)
