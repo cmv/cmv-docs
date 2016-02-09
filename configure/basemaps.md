@@ -177,7 +177,7 @@ define([
 
 ### Zooming in beyond Esri default scales or levels of detail.
 
-**There might be multiple ways to do this so if there are other examples please share. But here is one example.**
+**This can also be accomplished without an additional map service by editing your mapOptions object.  See the [mapOptions config page](../configure/mapOptions.md#manually-setting-the-levels-of-detail-lods) for more details.**
 
 * Create a map service and enable caching using your scales, but choose the option to generate tiles manually.
 
