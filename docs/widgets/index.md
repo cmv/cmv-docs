@@ -2,45 +2,45 @@
 
 CMV comes with many "core" widgets including:
 
-#### [Base Maps](widgets/Basemaps)
+#### [Base Maps](./Basemaps)
 
-#### [Bookmarks](widgets/Bookmarks)
+#### [Bookmarks](./Bookmarks)
 
-#### [Directions](widgets/Directions)
+#### [Directions](./Directions)
 
-#### [Draw](widgets/Draw)
+#### [Draw](./Draw)
 
-#### [Editor](widgets/Editor)
+#### [Editor](./Editor)
 
-#### [Find](widgets/Find)
+#### [Find](./Find)
 
-#### [Geocoder](widgets/Geocoder)
+#### [Geocoder](./Geocoder)
 
-#### [Growler](widgets/Growler)
+#### [Growler](./Growler)
 
-#### [Help](widgets/Help)
+#### [Help](./Help)
 
-#### [Home Button](widgets/HomeButton)
+#### [Home Button](./HomeButton)
 
-#### [Identify](widgets/Identify)
+#### [Identify](./Identify)
 
-#### [Layer Control (Table of Contents)](widgets/LayerControl)
+#### [Layer Control (Table of Contents)](./LayerControl)
 
-#### [Legend](widgets/Legend)
+#### [Legend](./Legend)
 
-#### [Locate Button (Geolocation)](widgets/Geolocation)
+#### [Locate Button (Geolocation)](./Geolocation)
 
-#### [MapInfo](widgets/MapInfo)
+#### [MapInfo](./MapInfo)
 
-#### [Measurement](widgets/Measurement)
+#### [Measurement](./Measurement)
 
-#### [Overview Map](widgets/OverviewMap)
+#### [Overview Map](./OverviewMap)
 
-#### [Print](widgets/Print)
+#### [Print](./Print)
 
-#### [Scalebar](widgets/Scalebar)
+#### [Scalebar](./Scalebar)
 
-#### [StreetView](widgets/StreetView)
+#### [StreetView](./StreetView)
 
 
 # Contributed Widgets

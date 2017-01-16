@@ -21,8 +21,7 @@ pages:
 - Configure:
   - Introduction: configure/index.md
   - viewer.js: configure/viewer.md
-  - basemaps.js: configure/basemaps.md
-  - identify.js: configure/identify.md
+  - app.js: configure/app.md
 - Viewer.js:
   - header: configure/header.md
   - MapOptions: configure/mapOptions.md
