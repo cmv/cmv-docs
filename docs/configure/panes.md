@@ -38,7 +38,7 @@ That will work for widgets of type `titlePane` and `contentPane`. If you want to
 content: '<div id="myWidgetContainer"></div>'
 ```
 
-Then include the reference to that domNode in the widget options: 
+Then include the reference to that domNode in the widget options:
 
 ```javascript
 widget: {
@@ -48,4 +48,4 @@ widget: {
 }
 ```
 
-There are some gotchas when using dijits like a TabContainer dijit. Here's a discussion about using a TabContainer that also touches on the widget placement in panes: https://github.com/cmv/cmv-app/issues/214
+There are some gotchas when using dijits like a TabContainer dijit. Here's a discussion about using a TabContainer that also touches on the widget placement in panes: [Gitub #214](https://github.com/cmv/cmv-app/issues/214)
