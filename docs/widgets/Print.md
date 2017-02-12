@@ -17,7 +17,8 @@ print: {
         authorText: 'Me',
         defaultTitle: 'Viewer Map',
         defaultFormat: 'PDF',
-        defaultLayout: 'Letter ANSI A Landscape'
+        defaultLayout: 'Letter ANSI A Landscape',
+        resultOrder: 'last' // can be first or last
     }
 },
 ```
