@@ -8,78 +8,74 @@ identify: {
    type: 'invisible',
    path: 'gis/dijit/Identify',
    options: 'config/identify'
-                  },
+},
 ```
 
-## Identify widget configuration file
+## Configuration File
 The file can be found here `viewer/js/config/identify.js`. CMV comes with examples inside this file. Review this file on how to configure the widget for your use.
 
-**Note** CMV uses the [PopupTemplate Class](https://developers.arcgis.com/javascript/jsapi/popuptemplate-amd.html) for the Identify widget. The  [ArcGIS JS API Documentation](https://developers.arcgis.com/javascript/jshelp/intro_popuptemplate.html) needs revision to clarify the use of the `fieldInfos:` array when using the PopupTemplate Class. On the page linked above the section named "fieldInfo structure:" states that `fieldName:` comes from the name of the field. This is vague and is clarified below.
+## Identify options
+
+Property | Type | Description
+---------|------|------------
+`mapClickMode` | `Boolean` | In CMV, set this to `true` to enable the shared map click functionality.
+`mapRightClickMenu` | `Boolean` | In CMV, set this to `true` to enable the right click identify menu Alternatively set this to `'identify'`
+`identifyLayerInfos` | `Array<Object>` | In CMV, set this to `true` to enable the controller to pass the layer infos
+`identifies` | `Object` | The identify info for each layer and sublayer. See [Identifies Object](#identifies-object)for more details
+`draggable` | `Boolean` | Whether or not to enable the click/drag functionality of the popup
+`identifyTolerance` | `Number` | The number of pixels to identify around a map click. The default is `5`
+
+### Identifies object
+
+An identifies object consists of the nested structure below where `layer` is the layer id, and
+`0` is the id number of the sublayer.
+
+```javascript
+layer: {
+  0: {
+    // popup properties
+  }
+}
+```
+
+**Note:** CMV uses the [PopupTemplate Class](https://developers.arcgis.com/javascript/jsapi/popuptemplate-amd.html) for the Identify widget. The  [ArcGIS JS API Documentation](https://developers.arcgis.com/javascript/jshelp/intro_popuptemplate.html) needs revision to clarify the use of the field names when using the PopupTemplate Class. On the page linked above the section named "fieldInfo structure:" states that `fieldName:` comes from the name of the field. This is vague and is clarified below.
 
 To display your identify results with attribute values you must **use the _field alias_ as defined in the map service rest end point** and _do not use any other field name or alias defined in the geodatabase_.
 
-You can not reliably use the field name or the alias as defined in the geodatabase. Nor can you reliably use the field name as defined in the map service. You must use the field alias as defined in the map service. Here are some situations as to why you can not reliably use the _field name_ as defined in the map service:
+ - If a MXD alias is provided when the map service is published, the MXD alias is used as the field name
+ - Otherwise, the geodatabase alias is used if it is provided
+ - Finally, the geodatabase field name will be used
 
-* The geodatabase administrator may not use an alias for the field name, so by default the alias and field name are the same.
+## Formatting values
 
-* The geodatabase administrator may use an alias for the field name and, obviously, the names are different.
+Formatting values in the identify popup can be done using the `formatter` property in the `fieldInfos`.
 
-* The publisher of the map service may alter the alias within the MXD prior to publishing. This impacts situations one and two above.
+**Formatter parameters:**
 
-* The publisher of the map service may exclude certain fields of a feature class in the geodatabase prior to publishing.
+ - `value` - the value of the given field name. This will be an undefined value if
+            the field name given does not exist. (useful for creating extra properties)
+ - `attributes` - an object with all of the properties in the identified feature
+ - `geometry` - the identified feature geometry
 
-Please see the example below for clarity:
 
-The following screen shots will demonstrate the various situations above as well the results of this `viewer/js/config/identify.js` configuration
+```javascript
+fieldInfos: [{
+    fieldName: 'pole_id',
+    visible: true,
+    formatter: function (value, attributes, geometry) {
 
-``` javascript
-electric: {
-    1: {
-	title: 'Pole',
-	fieldInfos: [{
-            //geodatabase field name is 'FACILITYID'
-            //geodatabase field alias is not defined therefore defaults to 'FACILITYID'
-            //MXD altered the field alias to 'Pole Number', therefore attribute value will not be displayed
-            //'fieldName:' must match the MXD's field alias
-            fieldName: 'FACILITYID',
-            label: 'Facility ID',
-            visible: true
-	},{
-            //geodatabase field name is 'MATERIAL'
-            //geodatabase field alias is not defined therefore defaults to 'MATERIAL'
-            //MXD altered the field alias to 'Material', note case change
-            //'fieldName:' must match the MXD's field alias and is case sensitive
-            //attribute value is displayed
-            fieldName: 'Material',
-            visible: true					
-	},{
-            //geodatabase field name is 'POLESIZE'
-            //geodatabase field alias is not defined therefore defaults to 'POLESIZE'
-            //MXD altered the field alias to 'PoleSize', note case change, and attribute value is not displayed
-            //'fieldName:' must match the MXD's field alias and is case sensitive
-            fieldName: 'PoleSize',
-            visible: true					
-	},{
-            //geodatabase field name is 'BACKBONEINDICATOR'
-            //geodatabase field alias is not defined therefore defaults to 'BACKBONEINDICATOR'
-            //MXD did not alter the field alias
-            //attribute value is displayed
-            //You can use 'label:' to display an alias in a PopupTemplate
-            fieldName: 'BACKBONEINDICATOR',
-            label: 'Back Bone',
-            visible: true					
-	},{
-            //geodatabase field name is 'AGREEMENT'
-            //geodatabase field alias is not defined therefore defaults to 'AGREEMENT'
-            //MXD then defaults field alias to 'AGREEMENT'
-            //MXD excludes this field prior to publishing
-            //Attribute value is not be displayed in a PopupTemplate, even though 'fieldName:' matches alis in MXD
-            fieldName: 'AGREEMENT',
-            visible: true					
-	}]
+        // create a link to a different app
+        return '<a href="/poleapp/' + value + '">Pole App</a>';
     }
-},
+}]
 ```
+
+## Images and Media
+
+In general, images and other media like pie charts can be created using the
+`mediaInfos` property of the popup definition. But in other advanced cases,
+`formatter` may provide the functionality. In addition, the `content` property
+may be used for other advanced cases. [See below.](#build-your-own-identify-popup)
 
 ## Build your own identify popup
 
