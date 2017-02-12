@@ -11,6 +11,7 @@ Key          | Type      | Description
 `path`       | `String`  | The path to the widget. For cmv widgets, this is typically `'gis/dijit/Widgetname'`. Other widget paths can be configured using `dojoConfig`
 `id`         | `String`  | A unique identifier used to create a unique dom node for this widget. If not provided, the object key is used
 `title`      | `String`  | The title to display for `'titlePane'` type widgets
+`iconClass`  | `String`  | The font awesome icon class to use in `titlePane` type widgets. Example: `'fa-picture-o'`
 `open`       | `Boolean` | Whether or not this widget should be open by default. This is used for `'titlePane'` type widgets
 `position`   | `Number`  | A number representing the order to display widgets in the pane. The larger numbers will be placed towards the end, while `0` will be first
 `srcNodeRef` | `String`  | A string "id" for a dom node.Used for `'domNode'` type widgets.
