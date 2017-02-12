@@ -80,6 +80,7 @@ may be used for other advanced cases. [See below.](#build-your-own-identify-popu
 ## Build your own identify popup
 
 The JavascriptAPI has [a nice tutorial](https://developers.arcgis.com/javascript/jshelp/intro_formatinfowindow.html) on formatting the info window content. Specifying a content formatter will allow you to do things like:
+
 * Programatically generate html for the popup (bullet list)
 * Alter field values (convert a image url to image)
 * Embed other widgets like a tab container and chart/table in the popup window
