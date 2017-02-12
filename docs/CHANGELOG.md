@@ -1,297 +1,255 @@
-2016-02-08
+2017-02-10
 ==========
 
-  * Merge pull request [#505](https://github.com/cmv/cmv-app/issues/505) from mgd722/master
-    Added 'draggable' property to identify config object
+  * Merge pull request [#666](https://github.com/cmv/cmv-app/issues/666) from roemhildtg/use-inherited-mixins
+    Use inherited mixins
+  * remove extra promiseAll reference
+  * pass null to create 'all' widgets
+  * Merge branch 'use-inherited-mixins' of https://github.com/roemhildtg/cmv-app into HEAD
+  * Cleanup https://github.com/cmv/cmv-app/pull/666
 
-2016-02-07
+2017-02-06
 ==========
 
-  * Added 'draggable' property to identify config object
-    After looking through CMV docs, it seemed most appropriate to just put
-    this property here.  The sample config object in the docs is for
-    viewer.js or custom info windows and this is a pretty straightforward
-    setting.
+  * Merge branch 'develop' into use-inherited-mixins
+  * Merge pull request [#664](https://github.com/cmv/cmv-app/issues/664) from roemhildtg/identify-graphics-and-dynamic-layers
+    Override api's default graphic identify function and identify dynamic layers additionally
 
-2015-07-18
+2017-01-31
 ==========
 
-  * update version number to 1.3.4
+  * reset viewer.js to develop
+  * rename preStartup to postConfig for clarity
+  * call `createPanes` when `mapDeferred` resolves
+  * fix lint errors
+  * fix lint error
+  * Merge branch 'develop' into develop
+  * Override api's default graphic identify function and identify dynamic layers additionally
 
-2015-07-16
+2017-01-22
 ==========
 
-  * Merge pull request [#432](https://github.com/cmv/cmv-app/issues/432) from cmv/feature/exclude-feature-layers-from-editor-widget
-    exclude feature layers from Editor widget. Closes [#221](https://github.com/cmv/cmv-app/issues/221)
-  * Merge pull request [#435](https://github.com/cmv/cmv-app/issues/435) from cmv/feature/upgrade-to-v3.14
-    Update to JS API v 3.14
-  * Merge pull request [#433](https://github.com/cmv/cmv-app/issues/433) from cmv/bug/mapinfo-widget-setScale-error
-    avoid occasional error in `number.format` in mapInfo widget
-  * Merge pull request [#424](https://github.com/cmv/cmv-app/issues/424) from roemhildtg/add-icon-to-menu-topic
-    Add icon to menu topic
-  * Update to JS API v 3.14
+  * Merge pull request [#663](https://github.com/cmv/cmv-app/issues/663) from cmv/feature/move-titlePane-icons-to-config
+    Make the icons for the tilePanes configurable
+  * Make the icons for the tilePanes configurable in viewer.js and remove the classes from the css.
 
-2015-07-14
+2017-01-18
 ==========
 
-  * avoid occasional error in `number.format` by checking for a non-numeric scale.
-  * exclude feature layers from Editor widget. Closes [#221](https://github.com/cmv/cmv-app/issues/221)
+  * add documentation and fix typo
+  * remove console.log
+  * override createMap method if mixin returns a deferred
+    - as a result, order is not important with map/webmap mixins
+  * use createMap method to allow mixins to modify map before resolving deferred
 
-2015-06-08
+2017-01-17
 ==========
 
-  * Remove uneeded subMenus
-  * Remove unecessary PopupMenuItem
-  * Add iconNode to the template and pass it as a parameter to the topic.publish method. Allow widget developers to change the icon of the iconNode when the menu item is clicked.
+  * async loading of loadConfig and preStartup methods
 
-2015-06-07
+2017-01-15
 ==========
 
-  * Merge pull request [#420](https://github.com/cmv/cmv-app/issues/420) from cmv/feature/geocoder-map-extent
-    limit geocoder search to map extent
+  * implement an 'init' and 'startup' method in mixins and utilize deferreds for async ops
 
-2015-05-27
+2017-01-09
 ==========
 
-  * limit geocoder search to map extent
-  * Merge pull request [#401](https://github.com/cmv/cmv-app/issues/401) from roemhildtg/develop
-    Add menu to Layer Controller sub-layers
-  * Merge pull request [#419](https://github.com/cmv/cmv-app/issues/419) from roemhildtg/add-identify-popup-content
-    Allow the use of the popup's setContent method.
+  * Merge pull request [#661](https://github.com/cmv/cmv-app/issues/661) from cmv/fix/adjustments-to-loading-pane-widgets
+    Adjustments to loading of pane widgets
+  * Make sure the first pane widget is at position 0 to avoid error.
+  * correctly avoid the 'outer' and 'center' panes.
+  * Ensure that all titlePane and contentPane widgets have a placeAt parameter so they are loaded first.
+  * Merge pull request [#660](https://github.com/cmv/cmv-app/issues/660) from roemhildtg/fix-legend-layer-visibility
+    FIX: update legend when maps `update-end` event is fired
+  * Merge remote-tracking branch 'origin/develop' into develop
+  * FIX: update legend when maps `update-end` event is fired
+    - adds new gis/dijit/Legend widget from https://github.com/cmv/cmv-app/issues/659
+    - fixes https://github.com/cmv/cmv-app/issues/340
+    - fixes https://github.com/cmv/cmv-app/issues/294
 
-2015-05-26
+2016-12-31
 ==========
 
-  * check for a content value in the popup identify config and if it exists, call the setContent method on the popup after initializing it.
+  * Merge pull request [#655](https://github.com/cmv/cmv-app/issues/655) from cmv/feature/formatters-for-feature-layers
+    Enable identify formatters for feature layers.
 
-2015-05-19
+2016-12-25
 ==========
 
-  * Merge pull request [#407](https://github.com/cmv/cmv-app/issues/407) from cmv/feature/add-additional-layer-types
-    Add support for additional layer types
-  * Merge pull request [#408](https://github.com/cmv/cmv-app/issues/408) from cmv/feature/directions-widget-error-with-v3.13
-    Add additional code to hide map click button with JS API version 3.13
-  * Merge pull request [#409](https://github.com/cmv/cmv-app/issues/409) from cmv/feature/fix-floating-window-drag-not-releasing
-    Add mouseup and touchend events to document to release dragging movable.
-  * Merge pull request [#410](https://github.com/cmv/cmv-app/issues/410) from cmv/feature/find-widget-enhancements
-    Feature/find widget enhancements
+  * The Esri geometryEngine can mess with the geometry passed to it so we will clone it first.
 
-2015-05-03
+2016-12-21
 ==========
 
-  * Merge pull request [#402](https://github.com/cmv/cmv-app/issues/402) from cmv/feature/add-support-for-hiding-oplayers-in-legend
-    add support for hiding operational layers in the legend
+  * Enable identify formatters for feature layers.
+    Pass the feature geometry to formatter to allow for calculated area/length/position/etc.
 
-2015-04-30
+2016-12-17
 ==========
 
-  * Add mouseup and touchend events to document to release dragging movable.
+  * Merge pull request [#652](https://github.com/cmv/cmv-app/issues/652) from cmv/fix/styling-esri-directions-print-button
+    fix the styling of print button in the Esri directions widget
+  * Merge branch 'develop' into fix/styling-esri-directions-print-button
+  * Merge pull request [#651](https://github.com/cmv/cmv-app/issues/651) from cmv/feature/print-results-order
+    Allow option for print results to sort from newest to oldest.
+  * fix the styling of print button in the Esri directions widget
+  * Merge branch 'develop' into feature/print-results-order
+  * Merge pull request [#648](https://github.com/cmv/cmv-app/issues/648) from roemhildtg/identify-layer-add-topic
+    make identify listen for new layer contol layer adds
+  * allow option for print results to sort from newest to oldest.
+    add a timestamp to title attribute of print results.
 
-2015-04-28
+2016-12-11
 ==========
 
-  * Add additional code to hide map click button with JS API version 3.13
-  * Add support for the following layer types to CMV Controller and
-    the layerControl widget:
-    * WebTiledLayer
-    * ArcGISImageServiceVectorLayer (with legend)
-    * RasterLayer
-    * StreamLayer (with Legend)
-    Add support for the following layer types to Controller:
-    * DataAdaptorFeatureLayer (untested)
-  * Remove splitter on left pane for consistency with current demo app
-  * Revert title of Find widget back to "Find" and set it to not open at start
-  * move "Find exact matches only" checkbox back to main form
-    allow options button to be hidden and hide by default
-    change label for options button to "Options" to better reflect it's purpose
-  * Format code for consistency with other modules
+  * add missing jsdoc comments
+  * make identify listen for new layer adds topic
+  * Merge pull request [#649](https://github.com/cmv/cmv-app/issues/649) from cmv/feature/update-to-esri-jsapi-3.19
+    Update to Esri JS API upcoming version 3.19
+  * remove specific package references for put and xstyle. Esri now includes the updated versions with the JS API so the prior work-around is no longer necessary.
+  * Update to proj4js version 2.3.15
+  * update to Font-Awesome version 4.70
+  * update to Esri JS API upcoming version 3.19
 
-2015-04-19
+2016-12-04
 ==========
 
-  * Remove unused showInLegend param
-  * Add support for additional legend layerInfos params (layerInfo param)
-    https://developers.arcgis.com/javascript/jsapi/legend-amd.html#legend1
-  * implement tmcgee's suggestion for consistency with other configuration options.
-  * add support for hiding operational layers in the legend (legendLayerInfos array)
+  * Merge pull request [#645](https://github.com/cmv/cmv-app/issues/645) from cmv/feature/add-widget-loading-indicator
+    Add a simple loading indicator for titlePane and contentPane widgets.
+  * Merge branch 'develop' into feature/add-widget-loading-indicator
+  * Merge pull request [#644](https://github.com/cmv/cmv-app/issues/644) from cmv/fixes/adjust-streeview-stylesheet
+    Fix StreetView Stylesheet and allow Google API version to be configured.
+  * Merge branch 'develop' into fixes/adjust-streeview-stylesheet
+  * Merge pull request [#643](https://github.com/cmv/cmv-app/issues/643) from cmv/feature/new-widget-types
+    adds 3 new widget types: loading, layout and layer.
 
-2015-04-14
+2016-12-03
 ==========
 
-  * Add subLayerMenu to LayerControl class to avoid undefined errors
-  * If a layer control has a submenu, style it blue.
-  * Add a subLayerMenu property to LayerControl options. Pass a subset of this menu object to the sub layer control using the type. Modify DynamicSublayer to add a menu.
+  * Add a simple loading indicator for titlePane and contentPane widgets.
 
-2015-03-03
+2016-12-02
 ==========
 
-  * Merge pull request [#388](https://github.com/cmv/cmv-app/issues/388) from cmv/feature/update-to-JS-API-v-3.13
-    Update to JS API v 3.13
-  * Merge pull request [#389](https://github.com/cmv/cmv-app/issues/389) from cmv/feature/add-slack-hook-to-.travis.yml
-    Add Slack Notification hooks to .travis.yml
+  * Add position:relative to the widget's container div so the absolutely positioned button doesn't appear at the top of the page.
+    All the version of the Google API to be set in the app configuration file.
+  * remove some braces that should not have been there.
+  * adds 3 new widget types: loading, layout and layer.
+    adds 3 new entry points within the Controller when widgets can be created.
+    use the widget's key internally when no id is available
 
-2015-03-02
+2016-11-18
 ==========
 
-  * Rename: AdvancedFind -> Find
-  * remove existing find widget
-  * Add Slack Notification hooks to .travis.yml
+  * Merge pull request [#634](https://github.com/cmv/cmv-app/issues/634) from cmv/fix/add-back-basemaps-widget-config
+    basemaps widget config should not have been removed from viewer.js
+  * basemaps widget config should not have been removed from viewer.js
 
-2015-03-01
+2016-11-15
 ==========
 
-  * Update to JS API v 3.13
-    Update to Font-Awesome v 4.3.0
-    Update to Proj4JS v 2.3.3
+  * Merge pull request [#632](https://github.com/cmv/cmv-app/issues/632) from roemhildtg/fix-628-contentPane-sidebar
+    fixes https://github.com/cmv/cmv-app/issues/628
+  * fixes https://github.com/cmv/cmv-app/issues/628
 
-2015-02-19
+2016-11-01
 ==========
 
-  * remove README
-    moving to docs repo
-  * add options for controlling zoom, new options btn
-    Add checkboxes to control zooming on select/deselect.  Move checkboxes to Options dropdown.
-  * make extent scaling factor configurable
-  * rename method
-  * remove white space
-  * refactoring - clean up complex conditionals
+  * Merge pull request [#626](https://github.com/cmv/cmv-app/issues/626) from cmv/feature/add-support-for-webmaps
+    Add support for webmaps
+  * Merge branch 'develop' into feature/add-support-for-webmaps
+  * Merge pull request [#625](https://github.com/cmv/cmv-app/issues/625) from cmv/feature/add-basemap-gallery-widget
+    Add new basemap gallery widget
+  * Merge branch 'develop' into feature/add-basemap-gallery-widget
+  * Merge pull request [#624](https://github.com/cmv/cmv-app/issues/624) from cmv/feature/basemap-widget-combine-all-basemaps-as-one
+    basemap widget - support custom and agol basemaps at the same time
 
-2015-02-18
+2016-10-31
 ==========
 
-  * log event object
-  * add a customGridEventHandlers example
-  * attempt to fix travis  build issue
-    failed JSHint [ 'Fcode' ] better written in dot notation.  However, this will likely fail due to camel casing.
-  * initial readme documentation
-    This still needs lots of work!
-  * add sample configuration for advanced find
-  * add advanced find widget
+  * Add support for webmaps
+  * support combined custom and agol basemaps. `mode` is no longer necessary.
+  * include custom basemap as example.
+  * Let Esri handle the i18n title for Esri basemaps. Still can be overridden in config
 
-2015-02-09
+2016-10-30
 ==========
 
-  * Update README.md
-    Fix the documentation icons.
-  * Merge pull request [#377](https://github.com/cmv/cmv-app/issues/377) from cmv/feature/update-for-read-the-docs
-    Update README for new documentation
-  * Clean up the README
-  * Additional edits to README
-  * Update README for new documentation
-    Remove 3 *.md files that are now in documentation
-    Update package.json to version 1.3.3 & current year.
+  * new BasemapGallery widget
+  * cleanup the bottom border for titlepanes
+  * Merge pull request [#622](https://github.com/cmv/cmv-app/issues/622) from cmv/fix/floating-titlepane-chrome-55
+    Fix titlePane issue effecting IE 11/M.S. Edge and now Chrome v 55
+  * Merge branch 'develop' into fix/floating-titlepane-chrome-55
+  * Merge pull request [#621](https://github.com/cmv/cmv-app/issues/621) from cmv/fix/identify-widget-checkVisibilityRecursive-use-sublayer's-id
+    Identify widget - account for hard-coded sublayer IDs in checkVisibilityRecursive
 
-2015-01-27
+2016-10-29
 ==========
 
-  * Merge pull request [#365](https://github.com/cmv/cmv-app/issues/365) from cmv/patch/directionsFix
-    Patch/directions fix
-  * Revert "3.12 added a new map click feature which does not work with CMV. I deactivated this default feature and hid the botton in the dom until we can better address this (need an update to the API)."
-    This reverts commit d98c00854f72af70d791c15442c5d46c9ac7c446.
-  * 3.12 added a new map click feature which does not work with CMV. I deactivated this default feature and hid the botton in the dom until we can better address this (need an update to the API).
+  * Account for hard-coded sublayer IDs
+    the id may not be the same as the index.to layerInfos array
+  * fix issue in dojo mover class causing IE and now Chrome v 55 to not let go of the titlePane when mouse is released.
 
-2015-01-22
+2016-10-09
 ==========
 
-  * Merge pull request [#356](https://github.com/cmv/cmv-app/issues/356) from cmv/feature/find-widget-zoom-on-click
-    zoom on row click instead of select
+  * Merge pull request [#618](https://github.com/cmv/cmv-app/issues/618) from roemhildtg/proposal-custom-identify-formatter
+    Add the ability to add custom field formatters
+  * Cleanup
+  * Mixin default popup template options with user provided options.
+  * adds default formatters where possible
+  * Fix indent
+  * Merge remote-tracking branch 'origin/develop' into proposal-custom-identify-formatter
 
-2015-01-21
+2016-10-08
 ==========
 
-  * fix build error: line [#377](https://github.com/cmv/cmv-app/issues/377)
-  * zoom on row click or keyboard navigation
-    add event handler to zoom to feature selected vai keyboard navigation.
-    extract method to return feature from row event.
-  * zoom on row click instead of select
-    use the .dgrid-row:click to handle zooming to clicked feature.  This handles the case where the user has clicked on a feature, then manually panned the map.  Now clicking on the selected feature will pan the map back to the selected feature.
+  * Add the ability to add custom field formatters
+  * Merge pull request [#617](https://github.com/cmv/cmv-app/issues/617) from roemhildtg/fix-603-sublayer-menu
+    Fixes sublayer menu not appearing for single dynamic layer
+  * Fix linting issues.
 
-2015-01-11
+2016-10-07
 ==========
 
-  * Merge pull request [#344](https://github.com/cmv/cmv-app/issues/344) from cmv/issues/341-fix
-    fix for issue [#341](https://github.com/cmv/cmv-app/issues/341)
-  * fix for issue [#341](https://github.com/cmv/cmv-app/issues/341)
-    locate button displays html tags in message as text.  Also, cleans up altitude accuracy label in locate button template.
+  * fix typo
+  * Fixes https://github.com/cmv/cmv-app/issues/603 and adds menu examples in viewer config
 
-2014-12-24
+2016-10-05
 ==========
 
-  * Merge pull request [#333](https://github.com/cmv/cmv-app/issues/333) from cmv/feature/keep-track-of-floating-widget-sidebar-position
-    Keep track of floating widget sidebar position. Use full titlebar for docking/moving widgets.
-  * Merge pull request [#331](https://github.com/cmv/cmv-app/issues/331) from cmv/feature/update-to-JS-API-v-3.12
-    Update the JavaScript API from version 3.11 to 3.12
+  * Merge pull request [#613](https://github.com/cmv/cmv-app/issues/613) from roemhildtg/fix-broken-pane-toggle
+    Fix broken pane toggle
+  * add third argument suppressEvent to togglePane function
+  * Merge remote-tracking branch 'origin/develop' into fix-broken-pane-toggle
+  * Merge pull request [#615](https://github.com/cmv/cmv-app/issues/615) from cmv/feature/make-flat-theme-the-default
+    Make dojo flat the default theme
+  * Merge branch 'develop' into feature/make-flat-theme-the-default
+  * Merge pull request [#614](https://github.com/cmv/cmv-app/issues/614) from cmv/fix/revert-using-our-own-drag-delay
+    remove use of our own (unreliable) drag delay for floating windows
 
-2014-12-15
+2016-10-04
 ==========
 
-  * fixed formatting
-  * Added support for undocking and moving the floating widgets using the
-    entire titlebar which should be more intuitive.
+  * 2 adjustments to theme css.
+  * switch to flat theme
+  * this removes the use of our own (unreliable) drag delay for floating windows.
+    dojo included with ESRI JS API 3.17+ adds detection for MS Edge browser so
+    we can use that as a more reliable approach to solving the original issue [#379](https://github.com/cmv/cmv-app/issues/379)
+    with dragging floating windows in Internet Explorer and Edge browsers.
+  * Fix broken toggle pane buttons
 
-2014-12-14
+2016-10-03
 ==========
 
-  * Update the JavaScript API from version 3.11 to 3.12
-    ** Note: This is untested. Version 3.12 has not been officially
-    announced at the time of this commit. **
-  * keep track of floating widget's position in sidebar when undocked
-    so it will be re-docked in the same position.
+  * Merge pull request [#609](https://github.com/cmv/cmv-app/issues/609) from cmv/feature/update-package.json-for-2.0.0-beta.1
+    update package dependencies and bump the version number.
 
-2014-12-02
+2016-10-02
 ==========
 
-  * Merge pull request [#325](https://github.com/cmv/cmv-app/issues/325) from cmv/feature/draggable-info-window
-    allow info window for identified features to be temporarily dragged
-  * Merge pull request [#326](https://github.com/cmv/cmv-app/issues/326) from cmv/fix/sidebar-splitter-and-IE10
-    fixes [#322](https://github.com/cmv/cmv-app/issues/322)
-  * fixes [#322](https://github.com/cmv/cmv-app/issues/322)
-  * allow info window for identified features to be temporarily dragged
-    away from the identify location. Once a new feature is selected via the
-    previous/next arrow icons or a new identify is executed the window
-    bounces back to the proper identify location.
-  * Merge pull request [#324](https://github.com/cmv/cmv-app/issues/324) from cmv/patch/LayerControl-1.3.2
-    Add kml legend
-
-2014-12-01
-==========
-
-  * Add kml legend
-
-2014-11-30
-==========
-
-  * Merge pull request [#321](https://github.com/cmv/cmv-app/issues/321) from cmv/fix/use-innerHTML-to-set-header-and-subheader
-    Use innerHTML instead of innerText to set configurable header/subheader.
-  * Use innerHTML instead of innerText to set configurable header/subheader.
-  * Merge pull request [#320](https://github.com/cmv/cmv-app/issues/320) from cmv/update/LayerControl-1.3.2
-    Update/layer control 1.3.2
-
-2014-11-29
-==========
-
-  * Dynamic sublayer control updates on external setVisibleLayers()
-  * Fix dynamic noLegend bug with sublayers.
-  * Add KML control.
-  * Merge branch 'develop' into update/LayerControl-1.3.2
-
-2014-11-20
-==========
-
-  * Merge pull request [#313](https://github.com/cmv/cmv-app/issues/313) from cmv/feature/1.3.2-nls
-    Feature/1.3.2 nls
-  * geocoder nls support
-  * Merge branch 'develop' into 1.3.2/nls
-  * nls support
-    broke template string out into separate file
-  * nls support
-  * Merge pull request [#312](https://github.com/cmv/cmv-app/issues/312) from cmv/widget-updates/print-handle-async-errors
-    Print Widget: handle async errors
-  * missing semicolon
-  * handle async errors
-
-2014-11-14
-==========
-
-  * Merge pull request [#302](https://github.com/cmv/cmv-app/issues/302) from cmv/widget-updates/identify
-    Identify Widget: nls support
+  * update package dependencies and bump the version number.
+  * Merge pull request [#608](https://github.com/cmv/cmv-app/issues/608) from roemhildtg/fix-find-widget-missing-button
+    Add missing require for Find widget which periodically causes WidgetsInTemplate error
+  * Merge branch 'develop' into fix-find-widget-missing-button

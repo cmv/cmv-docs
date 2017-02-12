@@ -18,6 +18,7 @@ pages:
   - Configure: configure/index.md
   - Support: support.md
   - Development Environment: develop.md
+  - Changelog: CHANGELOG.md
 - Configure:
   - Introduction: configure/index.md
   - viewer.js: configure/viewer.md
