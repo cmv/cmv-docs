@@ -84,7 +84,7 @@ The JavascriptAPI has [a nice tutorial](https://developers.arcgis.com/javascript
 * Alter field values (convert a image url to image)
 * Embed other widgets like a tab container and chart/table in the popup window
 
-The identify widget will check for a `content` property in each `identifies` object. This proerty can be either a **string or function**.
+The identify widget will check for a `content` property in each `identifies` object. This property can be either a **string or function**.
 Example usage:
 ``` javascript
 electric: {
