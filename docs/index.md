@@ -8,7 +8,7 @@
 
 This JavaScript web app can be easily configured or used as a boilerplate/starting point for basic viewers. It also demonstrates best practices for modular design and OOP via classes in JS using dojo's great [declare](http://dojotoolkit.org/reference-guide/1.9/dojo/_base/declare.html) system.
 
-[![screen shot 2014-08-20 at 9 59 48 pm](./img/screenshot.png =400x)](http://demo.cmv.io/viewer/)
+[![screen shot 2014-08-20 at 9 59 48 pm](./img/screenshot.png)](http://demo.cmv.io/viewer/)
 
 ## Demo Site
 

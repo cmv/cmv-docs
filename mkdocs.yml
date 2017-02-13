@@ -5,7 +5,7 @@ dev_addr: '0.0.0.0:8000'
 
 repo_url: https://github.com/cmv/cmv-app
 
-docs_dir: ./
+docs_dir: ./docs
 strict: true
 theme: yeti
 #theme: spacelab
@@ -18,13 +18,13 @@ pages:
   - Configure: configure/index.md
   - Support: support.md
   - Development Environment: develop.md
+  - Changelog: CHANGELOG.md
 - Configure:
   - Introduction: configure/index.md
   - viewer.js: configure/viewer.md
-  - basemaps.js: configure/basemaps.md
-  - identify.js: configure/identify.md
+  - app.js: configure/app.md
 - Viewer.js:
-  - esriConfig: configure/esriConfig.md
+  - header: configure/header.md
   - MapOptions: configure/mapOptions.md
   - Operational Layers: configure/operationalLayers.md
   - Panes: configure/panes.md

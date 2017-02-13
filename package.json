@@ -1,0 +1,28 @@
+{
+  "name": "cmv-docs",
+  "version": "1.0.0",
+  "description": "documentation for the cmv-app",
+  "main": "index.js",
+  "dependencies": {
+    "changelog": "^1.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "changelog": "changelog https://github.com/cmv/cmv-app all > docs/CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmv/cmv-docs.git"
+  },
+  "keywords": [
+    "cmv-app",
+    "docs",
+    "documentation"
+  ],
+  "author": "David Spriggs and Contributors",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmv/cmv-docs/issues"
+  },
+  "homepage": "https://github.com/cmv/cmv-docs#readme"
+}

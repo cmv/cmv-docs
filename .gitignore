@@ -1,4 +1,4 @@
 # Folders to ignore
 site
-
+node_modules/
 .idea/

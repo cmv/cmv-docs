@@ -1,3 +1,5 @@
+# Basemaps
+
 This file comes with the standard ESRI basemaps already configured to work with the application. Should you want to use your own custom basemaps or mash them up with ESRI basemaps there are a couple of ways to do this.
 
 ## What Options Are Available?
