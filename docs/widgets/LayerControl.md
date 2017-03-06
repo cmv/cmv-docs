@@ -177,11 +177,24 @@ layerControlLayerInfos: {
 
 ## Topics
 
-The layer control publishes and subscribes to several `dojo/topic` items. 
+The layer control publishes and subscribes to several `dojo/topic` items.
+
+**Published**
+
+Topic                           | Description
+------------------------------- | --------------------------------------------------------
+`layerControl/layerToggle`      | Published when a layer's visibility is toggled
+`layerControl/setVisibleLayers` | Published when visible layers are set on a dynamic layer
+`layerControl/<menuitemTopic>`  | Published when a layer's menu item is clicked. `<menuitemTopic>` is replaced with the actual topic name passed in the menu item options
+
+**Subscribed**
+
+Topic                              | Description
+---------------------------------- | --------------------------------------------------------------------------
+`layerControl/removeLayerControls` | Removes an array of layer controls. Accepts an array of layerInfo objects.
+`layerControl/addLayerControls`    | Adds an array of layer controls. Accepts an array of layerInfo objects.
 
 Subscribe to any of the following topics. CMV aims to please, so let us know if you would like a topic published for a particular user action, or layer/layer control state change.
-
-`layerControl/layerToggle` is published when layer visibility changes via the layer checkbox.
 
 ```javascript
 topic.subscribe('layerControl/layerToggle', function (r) {
@@ -199,10 +212,10 @@ topic.subscribe('layerControl/setVisibleLayers', function (r) {
 });
 ```
 
-`layerControl/menuItemTopic` is published when a menu item is clicked.
+`layerControl/<menuItemTopic>` is published when a menu item is clicked.
 
 ```javascript
-topic.subscribe('layerControl/menuItemTopic', function (r) {
+topic.subscribe('layerControl/<menuItemTopic>', function (r) {
     console.log(r.layer); //layer id
     console.log(r.subLayer); //array of set visible layer ids
     console.log(r.iconNode); //a domNode to toggle font awesome classes on
