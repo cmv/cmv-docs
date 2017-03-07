@@ -48,7 +48,9 @@ To display your identify results with attribute values you must **use the _field
 
 ## Formatting values
 
-Formatting values in the identify popup can be done using the `formatter` property in the `fieldInfos`.
+Formatting values in the identify popup can be done using the `formatter` property in the `fieldInfos`. 
+
+**Warning: By applying a formatter to a value, this will modify the feature's attribute value after it is identified. For instance `map.infoWindow.getSelectedFeature()` will return the modified feature. To avoid this, consider using virtual fields.**
 
 **Formatter parameters:**
 
@@ -57,6 +59,9 @@ Formatting values in the identify popup can be done using the `formatter` proper
  - `attributes` - an object with all of the properties in the identified feature
  - `geometry` - the identified feature geometry
 
+**Virtual fields**
+
+Virtual fields are fields that don't exist in the map service, and instead are generated on the fly using a formatter. 
 
 ```javascript
 fieldInfos: [{
@@ -66,6 +71,14 @@ fieldInfos: [{
 
         // create a link to a different app
         return '<a href="/poleapp/' + value + '">Pole App</a>';
+    }
+}, {
+    // create a virtual field
+    fieldName: 'My super cool field',
+    visible: true,
+    formatter: function(value, attributes, geometry) {
+        // value is undefined here so we can only use attributes and geometry 
+	return geometry.x + ', ' + geomtry.y;
     }
 }]
 ```
